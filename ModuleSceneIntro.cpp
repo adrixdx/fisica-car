@@ -20,7 +20,7 @@ bool ModuleSceneIntro::Start()
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 	createcube(1.0f, 1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(0, 1, 0));
-
+	createcylinder(1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(1, 2, 1));
 	return ret;
 }
 
@@ -30,6 +30,9 @@ bool ModuleSceneIntro::CleanUp()
 	LOG("Unloading Intro scene");
 	for (int i = 0; i < cubelist.count(); i++) {
 		delete cubelist[i];
+	}
+	for (int i = 0; i < cylinderlist.count(); i++) {
+		delete cylinderlist[i];
 	}
 	return true;
 }
@@ -49,6 +52,14 @@ update_status ModuleSceneIntro::Update(float dt)
 		iteratorcube = iteratorcube->next;
 	}
 
+	p2List_item<Cylinder*>*iteratorcylinder;
+	iteratorcylinder = cylinderlist.getFirst();
+	while (iteratorcylinder != NULL) {
+
+		iteratorcylinder->data->Render();
+		iteratorcylinder = iteratorcylinder->next;
+	}
+
 
 	return UPDATE_CONTINUE;
 }
@@ -61,9 +72,19 @@ void ModuleSceneIntro::createcube(const float x, const float y, const float z, v
 	Cube* cube=new Cube(x,y,z);
 	cube->SetPos(pos.x, pos.y, pos.z);
 	cube->SetRotation(angle, axis);
-	Color Pink;
+	Color Red;
 
 	cubelist.add(cube);
+
+}
+
+void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos) {
+	Cylinder* cylinder = new Cylinder(radius, height);
+	cylinder->SetPos(pos.x, pos.y, pos.z);
+	cylinder->SetRotation(angle, axis);
+	Color Pink;
+
+	cylinderlist.add(cylinder);
 
 }
 

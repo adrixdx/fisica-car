@@ -22,7 +22,7 @@ public:
 	void OnCollision(PhysBody3D* body1, PhysBody3D* body2);
 
 	void createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos);
-
+	void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos);
 
 public:
 	/*
@@ -46,4 +46,5 @@ public:
 	PhysMotor3D* right_wheel;
 
 	p2List<Cube*>cubelist;
+	p2List<Cylinder*>cylinderlist;
 };
