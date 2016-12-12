@@ -21,17 +21,11 @@ public:
 
 	void OnCollision(PhysBody3D* body1, PhysBody3D* body2);
 
-	void createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos);
-	void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos);
+	void createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos, Color colorcube);
+	void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos, Color colorcylinder);
 
 public:
-	/*
-	PhysBody3D* pb_snake[MAX_SNAKE];
-	Sphere s_snake[MAX_SNAKE];
-
-	PhysBody3D* pb_snake2[MAX_SNAKE];
-	Sphere s_snake2[MAX_SNAKE];
-	*/
+	
 
 	PhysBody3D* pb_chassis;
 	Cube p_chassis;

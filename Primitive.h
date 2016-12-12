@@ -45,6 +45,7 @@ public :
 	void InnerRender() const;
 public:
 	vec3 size;
+	Color colorcube;
 };
 
 // ============================================

@@ -19,8 +19,8 @@ bool ModuleSceneIntro::Start()
 
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
-	createcube(1.0f, 1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(0, 1, 0));
-	createcylinder(1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(1, 2, 1));
+	createcube(1.0f, 1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(0, 1, 0), Red);
+	createcylinder(1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(1, 2, 1),Red);
 	return ret;
 }
 
@@ -68,21 +68,22 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
 }
 
-void ModuleSceneIntro::createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos) {
+void ModuleSceneIntro::createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos, Color colorcube) {
 	Cube* cube=new Cube(x,y,z);
 	cube->SetPos(pos.x, pos.y, pos.z);
 	cube->SetRotation(angle, axis);
-	Color Red;
+	cube->color = colorcube;
+
 
 	cubelist.add(cube);
 
 }
 
-void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos) {
+void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos, Color colorcylinder) {
 	Cylinder* cylinder = new Cylinder(radius, height);
 	cylinder->SetPos(pos.x, pos.y, pos.z);
 	cylinder->SetRotation(angle, axis);
-	Color Pink;
+	cylinder->color = colorcylinder;
 
 	cylinderlist.add(cylinder);
 
