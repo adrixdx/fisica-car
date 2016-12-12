@@ -17,7 +17,7 @@ bool ModuleSceneIntro::Start()
 	LOG("Loading Intro assets");
 	bool ret = true;
 
-	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
+	App->camera->Move(vec3(2.0f,2.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
 	createcube(1.0f, 1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(0, 1, 0), Red);
 	createcylinder(1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(1, 2, 1),Red);
