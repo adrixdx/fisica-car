@@ -247,12 +247,12 @@ void Line::InnerRender() const
 }
 
 // PLANE ==================================================
-Plane::Plane() : Primitive(), normal(0, 1, 0), constant(1)
+Plane::Plane() : Primitive(), normal(0, 1, 0), constant(1), planecolor(Red)
 {
 	type = PrimitiveTypes::Primitive_Plane;
 }
 
-Plane::Plane(float x, float y, float z, float d) : Primitive(), normal(x, y, z), constant(d)
+Plane::Plane(float x, float y, float z, float d, Color planecolor) : Primitive(), normal(x, y, z), constant(d), planecolor()
 {
 	type = PrimitiveTypes::Primitive_Plane;
 }
