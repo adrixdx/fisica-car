@@ -78,12 +78,33 @@ bool ModuleSceneIntro::Start()
 	createcube(15.0f, 0.25f, 1.0f, vec3(0, 1, 0), -45, vec3(-27.5, 5, 89.5), Pink);//Bordes
 	createcube(15.0f, 5.0f, 1.0f, vec3(0, 1, 0), -45, vec3(-27.5, 2.5, 89.5), White);//Bordes
 
+	createcube(1.0f, 0.25f, 50.0f, vec3(0, 1, 0), 0, vec3(-40, 5, -32), Pink);//Bordes
+	createcube(1.0f, 5.0f, 50.0f, vec3(0, 1, 0), 0, vec3(-40, 2.5, -32), White);//Bordes
+
+	createcube(1.0f, 0.25f, 20.0f, vec3(0, 1, 0), -60, vec3(-24.5, 5, -10), Pink);//Bordes
+	createcube(1.0f, 5.0f, 20.0f, vec3(0, 1, 0), -60, vec3(-24.5, 2.5, -10), White);//Bordes
+
+	createcube(1.0f, 0.25f, 20.0f, vec3(1, 0, 0), -12, vec3(-16, 3, -24), Pink);//Bordes
+	createcube(1.0f, 5.0f, 20.0f, vec3(1, 0, 0), -12, vec3(-16, 0.5, -23.5), White);//Bordes
+
+	createcube(1.0f, 1.0f, 104.0f, vec3(1, 0, 0), 0, vec3(-16, 0.5, -83), White);//Bordes
+	createcube(1.0f, 0.25f, 104.0f, vec3(1, 0, 0), 0, vec3(-16, 1, -83), Pink);//Bordes
+
+	//createcube(1.0f, 1.0f, 5.0f, vec3(0, 1, 0), -45, vec3(-16, 0.5, -93.5), White);//Bordes
+	//createcube(1.0f, 0.25f, 5.0f, vec3(0, 1, 0), -45, vec3(-16, 1, -93.5), Pink);//Bordes
+
 	createcube(1.0f, 0.25f, 100.0f, vec3(0, 1, 0), 0, vec3(-40, 5, 41), Pink);//Bordes
 	createcube(1.0f, 5.0f, 100.0f, vec3(0, 1, 0), 0, vec3(-40, 2.5, 41), White);//Bordes
 	createcube(1.0f, 0.25f, 90.0f, vec3(0, 1, 0), 0, vec3(-33, 5, 39.5), Pink);//Bordes
 	createcube(1.0f, 5.0f, 90.0f, vec3(0, 1, 0), 0, vec3(-33, 2.5, 39.5), White);//Bordes
 
-	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), -45, vec3(0, 0.5, -15), Yellow);//Rampa
+	createcube(1.0f, 0.25f, 130.0f, vec3(0, 1, 0), 0, vec3(-4.5, 1, -70), Pink);//Bordes
+	createcube(1.0f, 1.0f, 130.0f, vec3(0, 1, 0), 0, vec3(-4.5, 0.5, -70), White);//Bordes
+	createcube(1.0f, 0.25f, 110.0f, vec3(0, 1, 0), 0, vec3(4.5, 1, -85), Pink);//Bordes
+	createcube(1.0f, 1.0f, 110.0f, vec3(0, 1, 0), 0, vec3(4.5, 0.5, -85), White);//Bordes
+
+
+
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 15), Yellow);//Rampa
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 30), Yellow);//Rampa
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 45), Yellow);//Rampa
