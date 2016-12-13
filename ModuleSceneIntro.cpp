@@ -4,6 +4,7 @@
 #include "Primitive.h"
 #include "PhysBody3D.h"
 #include "Color.h"
+#include "ModulePlayer.h"
 
 ModuleSceneIntro::ModuleSceneIntro(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -39,7 +40,7 @@ bool ModuleSceneIntro::Start()
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-4, 5, 2), Black);//Flag
 	createcube(10.0f, 2.4f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), White);//Flag
 	createcylinder(0.2f, 12.8f, vec3(0, 0, 1), 90, vec3(-4.5, 0, 2), Black);//FlagCylinder
-	createcylinder(0.2f, 12.8f, vec3(0, 0, 1), 90, vec3(4.5, 0, 2), Black);//FlagCylinder
+	createcylinder(0.2f, 12.8f, vec3(0, 0, 1), 90, vec3(4.5, 0, 1), Black);//FlagCylinder
 
 	createcube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 20), White);//Tunnel
 	createcube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 20), White);//Tunnel
@@ -53,9 +54,20 @@ bool ModuleSceneIntro::Start()
 	createcube(1.0f, 1.5f, 50.0f, vec3(0, 0, 1), 0, vec3(-4.5, 5, 44.5), White);//Tunnel
 
 	createcube(1.0f, 0.25f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 1, 35), Pink);//Bordes
-	createcube(1.0f, 0.25f, 105.0f, vec3(0, 0, 1), 0, vec3(-4.5, 1, 35), Pink);//Bordes
+	createcube(1.0f, 0.25f, 95.0f, vec3(0, 0, 1), 0, vec3(-4.5, 1, 35), Pink);//Bordes
 	createcube(1.0f, 1.0f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 35),White);//Bordes
-	createcube(1.0f, 1.0f, 105.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 35), White);//Bordes
+	createcube(1.0f, 1.0f, 95.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 35), White);//Bordes
+
+	createcube(1.0f, 0.25f, 20.0f, vec3(0, 1, 0), -30, vec3(-0.5, 1, 95.5), Pink);//Bordes
+	createcube(1.0f, 1.0f, 20.0f, vec3(0, 1, 0), -30, vec3(-0.5, 0.5, 95.5), White);//Bordes
+	createcube(1.0f, 0.25f, 15.0f, vec3(0, 1, 0), -30, vec3(-8.25, 1, 88.5), Pink);//Bordes
+	createcube(1.0f, 1.0f, 15.0f, vec3(0, 1, 0), -30, vec3(-8.25, 0.5, 88.5), White);//Bordes
+
+	createcube(10.0f, 0.25f, 1.0f, vec3(0, 1, 0), 0, vec3(-17, 1, 95), Pink);//Bordes
+	createcube(10.0f, 1.0f, 1.0f, vec3(0, 1, 0), 0, vec3(-17, 0.5, 95), White);//Bordes
+	createcube(22.0f, 0.25f, 1.0f, vec3(0, 1, 0), 0, vec3(-16, 1, 104.5), Pink);//Bordes
+	createcube(22.0f, 1.0f, 1.0f, vec3(0, 1, 0), 0, vec3(-16, 0.5, 104.5), White);//Bordes
+
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), -45, vec3(0, 0.5, -15), Yellow);//Rampa
 	
 	return ret;
@@ -80,6 +92,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	Plane p(0, 1, 0, 0, Black);
 	p.axis = true;
 	p.Render();
+
 
 	
 	p2List_item<Cylinder*>*iteratorcylinder;
