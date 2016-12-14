@@ -247,12 +247,12 @@ void Line::InnerRender() const
 }
 
 // PLANE ==================================================
-Plane::Plane() : Primitive(), normal(0, 1, 0), constant(1), planecolor(Red)
+Plane::Plane() : Primitive(), normal(0, 1, 0), constant(1)
 {
 	type = PrimitiveTypes::Primitive_Plane;
 }
 
-Plane::Plane(float x, float y, float z, float d, Color planecolor) : Primitive(), normal(x, y, z), constant(d), planecolor()
+Plane::Plane(float x, float y, float z, float d) : Primitive(), normal(x, y, z), constant(d)
 {
 	type = PrimitiveTypes::Primitive_Plane;
 }
@@ -261,8 +261,8 @@ void Plane::InnerRender() const
 {
 	glLineWidth(1.0f);
 
-	glBegin(GL_LINES);
-
+	//glBegin(GL_LINES);
+	glBegin(GL_QUAD_STRIP);
 	float d = 200.0f;
 
 	for(float i = -d; i <= d; i += 1.0f)

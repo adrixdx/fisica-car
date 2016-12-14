@@ -1,7 +1,11 @@
-#pragma once
+#ifndef CAMERA
+#define CAMERA
+
 #include "Module.h"
 #include "Globals.h"
 #include "glmath.h"
+
+struct PhysVehicle3D;
 
 class ModuleCamera3D : public Module
 {
@@ -27,6 +31,11 @@ public:
 	vec3 X, Y, Z, Position, Reference;
 
 private:
-
-	mat4x4 ViewMatrix, ViewMatrixInverse;
+	vec3 CameraP;
+	vec3 Direction;
+	vec3 VehicleP;
+	PhysVehicle3D* Target;
+	mat4x4 ViewMatrix;
+	mat4x4 ViewMatrixInverse;
 };
+#endif CAMERA

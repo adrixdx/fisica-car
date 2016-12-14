@@ -88,10 +88,10 @@ class Plane : public Primitive
 {
 public:
 	Plane();
-	Plane(float x, float y, float z, float d, Color planecolor);
+	Plane(float x, float y, float z, float d);
 	void InnerRender() const;
 public:
-	Color planecolor;
+
 	vec3 normal;
 	float constant;
 };

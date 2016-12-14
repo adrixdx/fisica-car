@@ -19,7 +19,7 @@ bool ModuleSceneIntro::Start()
 	LOG("Loading Intro assets");
 	bool ret = true;
 
-	App->camera->Move(vec3(10.0f,10.0f, 10.0f));
+	App->camera->Move(vec3(0,0, 0));
 	App->camera->LookAt(vec3(0, 1, 0));
 	
 
@@ -205,7 +205,8 @@ bool ModuleSceneIntro::CleanUp()
 // Update
 update_status ModuleSceneIntro::Update(float dt)
 {
-	Plane p(0, 1, 0, 0, Black);
+	Plane p(0, 1, 0, 0);
+	p.color = Black;
 	p.axis = true;
 	p.Render();
 
