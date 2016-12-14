@@ -81,6 +81,9 @@ bool ModuleSceneIntro::Start()
 	createcube(1.0f, 0.25f, 50.0f, vec3(0, 1, 0), 0, vec3(-40, 5, -32), Pink);//Bordes
 	createcube(1.0f, 5.0f, 50.0f, vec3(0, 1, 0), 0, vec3(-40, 2.5, -32), White);//Bordes
 
+	createcube(1.0f, 0.25f, 60.0f, vec3(0, 1, 0), 0, vec3(-33, 5, -51), Pink);//Bordes
+	createcube(1.0f, 5.0f, 60.0f, vec3(0, 1, 0), 0, vec3(-33, 2.5, -51), White);//Bordes
+
 	createcube(1.0f, 0.25f, 50.0f, vec3(0, 1, 0), 0, vec3(-40, 5, -59), Pink);//Bordes
 	createcube(1.0f, 5.0f, 50.0f, vec3(0, 1, 0), 0, vec3(-40, 2.5, -59), White);//Bordes
 
@@ -89,6 +92,9 @@ bool ModuleSceneIntro::Start()
 
 	createcube(18.5f, 0.25f, 1.0f, vec3(0, 0, 1), 30, vec3(-25.5, 9, -90.5), Pink);//Bordes
 	createcube(20.0f, 5.0f, 1.0f, vec3(0, 0, 1), 30, vec3(-25, 6.5, -90.5), White);//Bordes
+
+	createcube(18.5f, 0.25f, 1.0f, vec3(0, 0, 1), 30, vec3(-25.5, 9, -80.5), Pink);//Bordes
+	createcube(18.0f, 5.0f, 1.0f, vec3(0, 0, 1), 30, vec3(-24, 7, -80.5), White);//Bordes
 
 	createcube(35.0f, 0.25f, 1.0f, vec3(0, 0, 1), 0, vec3(0, 13.5, -90.5), Pink);//Bordes
 	createcube(35.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(0, 11, -90.5), White);//Bordes
@@ -108,10 +114,24 @@ bool ModuleSceneIntro::Start()
 	createcube(1.0f, 0.25f, 50.0f, vec3(1, 0, 0), 5, vec3(40, 3, -59), Pink);//Bordes
 	createcube(1.0f, 5.0f, 50.0f, vec3(1, 0, 0), 5, vec3(40, 0.5, -59), White);//Bordes
 
-	createcube(1.0f, 0.25f, 45.0f, vec3(1, 0, 0), 5, vec3(31, 3.5, -59), Pink);//Bordes
-	createcube(1.0f, 6.0f, 45.0f, vec3(1, 0, 0), 5, vec3(31, 0.5, -59), White);//Bordes
+	createcube(1.0f, 0.25f, 40.0f, vec3(1, 0, 0), 7.5, vec3(31, 3.5, -61), Pink);//Bordes
+	createcube(1.0f, 6.0f, 40.0f, vec3(1, 0, 0), 7.5, vec3(31, 0.5, -61), White);//Bordes
 
-	createcube(2.0f, 4.0f, 1.0f, vec3(1, 0, 0), 0, vec3(30, 1.5, -80.5), White);//Bordes
+	createcube(2.0f, 4.0f, 1.0f, vec3(1, 0, 0), 0, vec3(30, 1.5, -80.5), White);//Arreglo bajada
+	createcube(3.0f, 4.0f, 1.0f, vec3(1, 0, 0), 0, vec3(-31.5, 1.5, -80.5), White);//Arreglo bajada
+
+	createcube(40.0f, 0.25f, 1.0f, vec3(0, 1, 0), 25, vec3(22.5, 1, -25.5), Pink);//Bordes
+	createcube(40.0f, 1.0f, 1.0f, vec3(0, 1, 0), 25, vec3(22.5, 0.5, -25.5), White);//Bordes
+
+	createcube(29.0f, 0.25f, 1.0f, vec3(0, 1, 0), 22, vec3(17.75, 1, -35.5), Pink);//Bordes
+	createcube(29.0f, 1.0f, 1.0f, vec3(0, 1, 0), 22, vec3(17.75, 0.5, -35.5), White);//Bordes
+
+
+
+
+
+
+
 
 	createcube(1.0f, 0.25f, 20.0f, vec3(0, 1, 0), -60, vec3(-24.5, 5, -10), Pink);//Bordes
 	createcube(1.0f, 5.0f, 20.0f, vec3(0, 1, 0), -60, vec3(-24.5, 2.5, -10), White);//Bordes
