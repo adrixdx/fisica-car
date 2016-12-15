@@ -140,7 +140,7 @@ update_status ModulePlayer::Update(float dt)
 
 	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_REPEAT)
 	{
-		vehicle->SetPos(0, 0, 0);
+		vehicle->SetPos(0, 5, 0);
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
