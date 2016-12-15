@@ -24,8 +24,10 @@ bool ModuleSceneIntro::Start()
 	
 
 	
-	CreateCube(10, 10, 10, Cian, 10000, 10, 1.5, 10, 0, { 0, 0, 0 });
-	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), Black);//Flag
+	CreateCube(2, 2, 20, Cian, 10000, 10, 1.5, 10, 45, { 0, 0, 1 });
+	CreateCube(10, 10, 10, Black, 10000, 10, 1.5, 30, 0, { 0, 0, 0 });
+	
+	/*createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 5.8, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-1, 5.8, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 4.2, 2), Black);//Flag
@@ -184,7 +186,7 @@ bool ModuleSceneIntro::Start()
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 30), Yellow);//Rampa
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 45), Yellow);//Rampa
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 60), Yellow);//Rampa
-	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 75), Yellow);//Rampa
+	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 75), Yellow);//Rampa*/
 	
 	return ret;
 }
@@ -228,7 +230,7 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, Color color, float mass, float x_pos, float y_pos, float z_pos, float degrees, vec3 axis)
 {
 	Object wall;
-	wall.cube.Scale(x_scale, y_scale, z_scale);
+	wall.cube.size = { x_scale, y_scale, z_scale };
 	if( degrees != NULL){
 		wall.cube.SetRotation(degrees, axis);
 	}
