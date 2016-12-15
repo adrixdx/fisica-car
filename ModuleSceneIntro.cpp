@@ -23,9 +23,47 @@ bool ModuleSceneIntro::Start()
 	App->camera->LookAt(vec3(0, 1, 0));
 	
 
-	
+	// STAGE 1
 
-	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), Black);//Flag
+	//CreateCube(8, 0.1, 8, Cian, 100000, 0, 1.5, 0, 0, { 0, 0, 0 }); // A  
+
+
+	CreateCube(3, 3, 100, Cian, 100000, -10, 1.5, 0, 0, { 0, 0, 0 }); // A  
+	CreateCube(3, 3, 100, Black, 100000, 10, 1.5, 0, 0, { 0, 0, 0 });
+
+	CreateCube(3, 3, 100, Black, 100000, -40, 1.5, 0, 0, { 0, 0, 0 }); // B  
+	CreateCube(3, 3, 100, Cian, 100000, -60, 1.5, 0, 0, { 0, 0, 0 });
+
+	CreateCube(3, 3, 14, Cian, 100000, -15, 1.5, 55, -45, { 0, 1, 0 }); // C1
+	CreateCube(2, 3, 9, Black, 100000, -25, 1.5, 60, 90, { 0, 1, 0 }); // C2
+	CreateCube(3, 3, 14, Cian, 100000, -35, 1.5, 55,  45, { 0, 1, 0 }); // C3
+
+	CreateCube(3, 3, 22, Cian, 100000, 5, 1.5, 60, -26.56, { 0, 1, 0 }); // D1
+	CreateCube(2, 3, 14, Black, 100000, -5, 1.5, 75, -45, { 0, 1, 0 }); // D2
+	CreateCube(3, 3, 30, Cian, 100000, -25, 1.5, 80, 90, { 0, 1, 0 }); // D3
+	CreateCube(2, 3, 14, Black, 100000, -45, 1.5, 75, 45, { 0, 1, 0 }); // D4
+	CreateCube(3, 3, 22, Cian, 100000, -55, 1.5, 60, 26.56, { 0, 1, 0 }); // D1
+
+	CreateCube(3, 3, 14, Cian, 100000, -15, 1.5, -55, 45, { 0, 1, 0 }); // E1
+	CreateCube(2, 3, 9, Black, 100000, -25, 1.5, -60, 90, { 0, 1, 0 }); // E2
+	CreateCube(3, 3, 14, Cian, 100000, -35, 1.5, -55, -45, { 0, 1, 0 }); // E3
+
+	CreateCube(3, 3, 22, Cian, 100000, 5, 1.5, -60, 26.56, { 0, 1, 0 }); // F1
+	CreateCube(2, 3, 14, Black, 100000, -5, 1.5, -75, 45, { 0, 1, 0 }); // F2
+	CreateCube(3, 3, 30, Cian, 100000, -25, 1.5, -80, 90, { 0, 1, 0 }); // F3
+	CreateCube(2, 3, 14, Black, 100000, -45, 1.5, -75, -45, { 0, 1, 0 }); // F4
+	CreateCube(3, 3, 22, Cian, 100000, -55, 1.5, -60, -26.56, { 0, 1, 0 }); // F1
+
+
+
+
+
+
+
+
+
+	
+	/*createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 5.8, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-1, 5.8, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 4.2, 2), Black);//Flag
@@ -184,7 +222,7 @@ bool ModuleSceneIntro::Start()
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 30), Yellow);//Rampa
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 45), Yellow);//Rampa
 	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 60), Yellow);//Rampa
-	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 75), Yellow);//Rampa
+	createcube(8.0f, 1.0f, 3.0f, vec3(1, 0, 0), 45, vec3(-36.5, 0.5, 75), Yellow);//Rampa*/
 	
 	return ret;
 }
@@ -193,12 +231,7 @@ bool ModuleSceneIntro::Start()
 bool ModuleSceneIntro::CleanUp()
 {
 	LOG("Unloading Intro scene");
-	for (int i = 0; i < cubelist.count(); i++) {
-		delete cubelist[i];
-	}
-	for (int i = 0; i < cylinderlist.count(); i++) {
-		delete cylinderlist[i];
-	}
+	circuit.clear();
 	return true;
 }
 
@@ -212,26 +245,36 @@ update_status ModuleSceneIntro::Update(float dt)
 
 
 	
-	p2List_item<Cylinder*>*iteratorcylinder;
-	iteratorcylinder = cylinderlist.getFirst();
-	while (iteratorcylinder != NULL) {
+	p2List_item<Object>* item = circuit.getFirst();
 
-		iteratorcylinder->data->Render();
-		iteratorcylinder = iteratorcylinder->next;
-	}
-	p2List_item<Cube*>*iteratorcube;
-	iteratorcube = cubelist.getFirst();
-	while (iteratorcube != NULL) {
+	while (item != NULL) {
 
-		iteratorcube->data->Render();
-		iteratorcube = iteratorcube->next;
+		item->data.pb_cube->GetTransform(item->data.cube.transform.M);
+		item->data.cube.Render();
+		item = item->next;
+
 	}
+
 
 	return UPDATE_CONTINUE;
 }
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
+}
+
+void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, Color color, float mass, float x_pos, float y_pos, float z_pos, float degrees, vec3 axis)
+{
+	Object wall;
+	wall.cube.size = { x_scale, y_scale, z_scale };
+	if( degrees != NULL){
+		wall.cube.SetRotation(degrees, axis);
+	}
+	wall.cube.color = color;
+
+	wall.pb_cube = App->physics->AddBody(wall.cube, mass);
+	wall.pb_cube->SetPos(x_pos, y_pos, z_pos);
+	circuit.add(wall);
 }
 
 void ModuleSceneIntro::createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos, Color colorcube) {
