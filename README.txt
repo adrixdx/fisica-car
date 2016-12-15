@@ -7,10 +7,9 @@ The project is a recreation of physics of a vehicle, in this case a mower.
 	##Move:
 
 	UP arrow 	-> go front
-	DOWN arrow 	-> Stop
-	LEFT arrow 	 -> go left
+	DOWN arrow 	-> go back LEFT arrow 	 -> go left
 	RIGHT arrow 	 -> go right
-	
+ SPACE->Stop	
 	##Camera:
  
 	move camera: W,S,A,D keys
@@ -19,12 +18,4 @@ The project is a recreation of physics of a vehicle, in this case a mower.
 
 #This project is being developed by: 
 	
-	- Marc Samper 
 	
-	https://github.com/marcsamper
-	
-	- Carlos Peralta
-	
-	https://github.com/SrPerso
-
-
