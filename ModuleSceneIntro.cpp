@@ -24,7 +24,7 @@ bool ModuleSceneIntro::Start()
 	
 
 	
-
+	CreateCube(10, 10, 10, Cian, 10000, 10, 1.5, 10, 0, { 0, 0, 0 });
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 5.8, 2), Black);//Flag
 	createcube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-1, 5.8, 2), Black);//Flag
@@ -193,12 +193,7 @@ bool ModuleSceneIntro::Start()
 bool ModuleSceneIntro::CleanUp()
 {
 	LOG("Unloading Intro scene");
-	for (int i = 0; i < cubelist.count(); i++) {
-		delete cubelist[i];
-	}
-	for (int i = 0; i < cylinderlist.count(); i++) {
-		delete cylinderlist[i];
-	}
+	circuit.clear();
 	return true;
 }
 
@@ -230,11 +225,13 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
 }
 
-void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, float degrees, vec3 axis, Color color, float mass, float x_pos, float y_pos, float z_pos)
+void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, Color color, float mass, float x_pos, float y_pos, float z_pos, float degrees, vec3 axis)
 {
 	Object wall;
 	wall.cube.Scale(x_scale, y_scale, z_scale);
-	wall.cube.SetRotation(degrees, axis);
+	if( degrees != NULL){
+		wall.cube.SetRotation(degrees, axis);
+	}
 	wall.cube.color = color;
 
 	wall.pb_cube = App->physics->AddBody(wall.cube, mass);
