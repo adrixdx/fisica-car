@@ -8,6 +8,7 @@
 
 struct PhysBody3D;
 struct PhysMotor3D;
+
 struct Object {
 
 	Cube cube;

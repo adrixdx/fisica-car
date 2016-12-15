@@ -117,7 +117,7 @@ update_status ModulePlayer::Update(float dt)
 
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
-		acceleration = MAX_ACCELERATION;
+		acceleration = MAX_ACCELERATION*2;
 	}
 
 	if(App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
@@ -134,12 +134,22 @@ update_status ModulePlayer::Update(float dt)
 
 	if(App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT)
 	{
-		acceleration = -MAX_ACCELERATION;
+		acceleration = -MAX_ACCELERATION*2;
 	}
+
+
+	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_REPEAT)
+	{
+		vehicle->SetPos(0, 0, 0);
+	}
+
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
 	{
 		brake = BRAKE_POWER;
 	}
+
+	//acceleration = -MAX_ACCELERATION;
+
 	vehicle->ApplyEngineForce(acceleration);
 	vehicle->Turn(turn);
 	vehicle->Brake(brake);
