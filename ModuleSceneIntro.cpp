@@ -234,6 +234,18 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
 }
 
+void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, float degrees, vec3 axis, Color color, float mass, float x_pos, float y_pos, float z_pos)
+{
+	Object wall;
+	wall.cube.Scale(x_scale, y_scale, z_scale);
+	wall.cube.SetRotation(degrees, axis);
+	wall.cube.color = color;
+
+	wall.pb_cube = App->physics->AddBody(wall.cube, mass);
+	wall.pb_cube->SetPos(x_pos, y_pos, z_pos);
+	circuit.add(wall);
+}
+
 void ModuleSceneIntro::createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos, Color colorcube) {
 	Cube* cube=new Cube(x,y,z);
 	cube->SetPos(pos.x, pos.y, pos.z);
