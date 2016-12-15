@@ -148,7 +148,18 @@ update_status ModulePlayer::Update(float dt)
 		brake = BRAKE_POWER;
 	}
 
-	//acceleration = -MAX_ACCELERATION;
+	if (App->input->GetKey(SDL_SCANCODE_UP) != KEY_REPEAT)
+	{
+		if(vehicle->GetKmh() > 0)
+		acceleration = -MAX_ACCELERATION;
+	}
+
+	if (App->input->GetKey(SDL_SCANCODE_DOWN) != KEY_REPEAT)
+	{
+		if (vehicle->GetKmh() < 0)
+			acceleration = MAX_ACCELERATION;
+	}
+	
 
 	vehicle->ApplyEngineForce(acceleration);
 	vehicle->Turn(turn);

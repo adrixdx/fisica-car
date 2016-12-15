@@ -25,6 +25,9 @@ bool ModuleSceneIntro::Start()
 
 	// STAGE 1
 
+	//CreateCube(8, 0.1, 8, Cian, 100000, 0, 1.5, 0, 0, { 0, 0, 0 }); // A  
+
+
 	CreateCube(3, 3, 100, Cian, 100000, -10, 1.5, 0, 0, { 0, 0, 0 }); // A  
 	CreateCube(3, 3, 100, Black, 100000, 10, 1.5, 0, 0, { 0, 0, 0 });
 
