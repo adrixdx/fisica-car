@@ -34,8 +34,8 @@ bool ModuleCamera3D::Start()
 	LOG("Setting up the camera");
 	bool ret = true;
 
-	CameraP = vec3(0.0f, 20, 0.0f);
-	Direction = vec3(1,5,1);
+	CameraP = vec3(0.0f, 40, -3.0f);
+	Direction = vec3(5,5,-5);
 	Target = App->player->vehicle;
 
 	return ret;
