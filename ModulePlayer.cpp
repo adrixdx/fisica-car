@@ -126,11 +126,18 @@ update_status ModulePlayer::Update(float dt)
 			turn +=  TURN_DEGREES;
 	}
 
+
 	if(App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 	{
 		if(turn > -TURN_DEGREES)
 			turn -= TURN_DEGREES;
 	}
+
+	if (App->input->GetKey(SDL_SCANCODE_T) == KEY_REPEAT)
+	{
+		acceleration = MAX_ACCELERATION * 10;
+	}
+
 
 	if(App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT)
 	{
