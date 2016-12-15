@@ -212,20 +212,16 @@ update_status ModuleSceneIntro::Update(float dt)
 
 
 	
-	p2List_item<Cylinder*>*iteratorcylinder;
-	iteratorcylinder = cylinderlist.getFirst();
-	while (iteratorcylinder != NULL) {
+	p2List_item<Object>* item = circuit.getFirst();
 
-		iteratorcylinder->data->Render();
-		iteratorcylinder = iteratorcylinder->next;
-	}
-	p2List_item<Cube*>*iteratorcube;
-	iteratorcube = cubelist.getFirst();
-	while (iteratorcube != NULL) {
+	while (item != NULL) {
 
-		iteratorcube->data->Render();
-		iteratorcube = iteratorcube->next;
+		item->data.pb_cube->GetTransform(item->data.cube.transform.M);
+		item->data.cube.Render();
+		item = item->next;
+
 	}
+
 
 	return UPDATE_CONTINUE;
 }
