@@ -20,6 +20,7 @@ ModuleCamera3D::ModuleCamera3D(Application* app, bool start_enabled) : Module(ap
 
 	CameraP = vec3(0.0f, 0.0f, 0.0f);
 	Direction = vec3(0.0f, 0.0f, 0.0f);
+
 	Target = NULL;
 	
 
@@ -37,8 +38,8 @@ bool ModuleCamera3D::Start()
 	bool ret = true;
 	
 	
-	CameraP = vec3(0.0f, 5.0f, -5.0f);
-	Direction = vec3(0, 5, 0);
+	CameraP = vec3(0.0f, 2.0f, -5.0f);
+	Direction = vec3(0, 2, 0);
 	Target = App->player->vehicle;
 
 	return ret;
@@ -118,8 +119,8 @@ update_status ModuleCamera3D::Update(float dt)
 		Target->GetTransform(&vehicle_trans);
 
 		X = vec3(vehicle_trans[0],vehicle_trans[1], vehicle_trans[2]);
-		Y = vec3(vehicle_trans[3], vehicle_trans[4], vehicle_trans[5]);
-		Z= vec3(vehicle_trans[6], vehicle_trans[7], vehicle_trans[8]);
+		Y = vec3(vehicle_trans[4], vehicle_trans[5], vehicle_trans[6]);
+		Z= vec3(vehicle_trans[8], vehicle_trans[9], vehicle_trans[10]);
 
 		VehicleP = vehicle_trans.translation();
 		App ->camera->Look((VehicleP + CameraP) - Z * 10, Direction+VehicleP,true);
