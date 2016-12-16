@@ -3,7 +3,9 @@
 #include "PhysBody3D.h"
 #include "ModuleCamera3D.h"
 #include "PhysVehicle3D.h"
+#include "ModulePlayer.h"
 
+struct PhysVehicle3D;
 
 ModuleCamera3D::ModuleCamera3D(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -13,7 +15,7 @@ ModuleCamera3D::ModuleCamera3D(Application* app, bool start_enabled) : Module(ap
 	Y = vec3(0.0f, 1.0f, 0.0f);
 	Z = vec3(0.0f, 0.0f, 1.0f);
 
-	Position = vec3(0.0f, 0.0f, 5.0f);
+	Position = vec3(0.0f, 0.0f, 0.0f);
 	Reference = vec3(0.0f, 0.0f, 0.0f);
 
 	CameraP = vec3(0.0f, 0.0f, 0.0f);
@@ -33,9 +35,10 @@ bool ModuleCamera3D::Start()
 {
 	LOG("Setting up the camera");
 	bool ret = true;
-
-	CameraP = vec3(0.0f, 40, -3.0f);
-	Direction = vec3(5,5,-5);
+	
+	
+	CameraP = vec3(0.0f, 5.0f, -5.0f);
+	Direction = vec3(0, 5, 0);
 	Target = App->player->vehicle;
 
 	return ret;
