@@ -63,22 +63,20 @@ bool ModuleSceneIntro::Start()
 
 
 	
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), Black,0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 5.8, 2), Black,0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-1, 5.8, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 4.2, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-1, 4.2, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(2, 5, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-2, 5, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(3, 5.8, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-3, 5.8, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(3, 4.2, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-3, 4.2, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(4, 5, 2), Black, 0);//Flag
-	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-4, 5, 2), Black, 0);//Flag
-	CreateCube(10.0f, 2.4f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 5, 2), White, 0);//Flag
-	createcylinder(0.2f, 12.8f, vec3(0, 0, 1), 90, vec3(-4.5, 0, 2), Black);//FlagCylinder
-	createcylinder(0.2f, 12.8f, vec3(0, 0, 1), 90, vec3(4.5, 0, 2), Black);//FlagCylinder
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 6.5, -5), Black,0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 7.3, -5), Black,0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-1, 7.3, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(1, 5.7, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-1, 5.7, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(2, 6.5, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-2, 6.5, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(3, 7.3, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-3, 7.3, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(3, 5.7, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-3, 5.7, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(4, 6.5, -5), Black, 0);//Flag
+	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(-4, 6.5, -5), Black, 0);//Flag
+	CreateCube(10.0f, 2.4f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 6.5, -5), White, 0);//Flag
 
 	CreateCube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 20), White, 0);//Tunnel
 	CreateCube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 20), White, 0);//Tunnel
@@ -91,25 +89,22 @@ bool ModuleSceneIntro::Start()
 	CreateCube(1.0f, 1.5f, 50.0f, vec3(0, 0, 1), 0, vec3(4.5, 5, 44.5), White, 0);//Tunnel
 	CreateCube(1.0f, 1.5f, 50.0f, vec3(0, 0, 1), 0, vec3(-4.5, 5, 44.5), White, 0);//Tunnel
 
-	CreateCube(1.0f, 0.25f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 3, 35), Pink, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 95.0f, vec3(0, 0, 1), 0, vec3(-4.5, 3, 35), Pink, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 35),White, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 95.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 35), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 5, 35), Pink, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 95.0f, vec3(0, 0, 1), 0, vec3(-4.5, 5, 35), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 2.5, 35),White, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 95.0f, vec3(0, 0, 1), 0, vec3(-4.5, 2.5, 35), White, 0);//Bordes
 
-	CreateCube(1.0f, 0.25f, 20.0f, vec3(0, 1, 0), -30, vec3(-0.5, 3, 95.5), Pink, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 20.0f, vec3(0, 1, 0), -30, vec3(-0.5, 0.5, 95.5), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 15.0f, vec3(0, 1, 0), -30, vec3(-8.25, 3, 88.5), Pink, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 15.0f, vec3(0, 1, 0), -30, vec3(-8.25, 0.5, 88.5), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 20.0f, vec3(0, 1, 0), -30, vec3(-0.5, 5, 95.5), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 20.0f, vec3(0, 1, 0), -30, vec3(-0.5, 2.5, 95.5), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 15.0f, vec3(0, 1, 0), -30, vec3(-8.25, 5, 88.5), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 15.0f, vec3(0, 1, 0), -30, vec3(-8.25, 2.5, 88.5), White, 0);//Bordes
 
-	CreateCube(12.0f, 0.25f, 1.0f, vec3(0, 0, 1), -21, vec3(-17, 3, 94.5), Pink, 0);//Bordes
-	CreateCube(12.0f, 1.0f, 1.0f, vec3(0, 0, 1), -21, vec3(-17, 2.5, 94.5), White, 0);//Bordes
-	CreateCube(12.0f, 1.0f, 1.0f, vec3(0, 0, 1), -21, vec3(-17, 1.5, 94.5), White, 0);//Bordes
-	CreateCube(10.0f, 1.0f, 1.0f, vec3(0, 0, 1), -21, vec3(-18, 1, 94.5), White, 0);//Bordes
-	CreateCube(10.0f, 1.0f, 1.0f, vec3(0, 0, 1), -21, vec3(-17, 0.5, 94.5), White, 0);//Bordes
-	CreateCube(12.0f, 1.0f, 1.0f, vec3(0, 0, 1), -21, vec3(-17, 0, 94.5), White, 0);//Bordes
-	CreateCube(12.0f, 1.0f, 1.0f, vec3(0, 0, 1), -21, vec3(-17, -1, 94.5), White, 0);//Bordes
-	CreateCube(22.0f, 0.25f, 1.0f, vec3(0, 0, 1), -11, vec3(-15.5, 3, 104.5), Pink, 0);//Bordes
-	CreateCube(22.0f, 5.0f, 1.0f, vec3(0, 0, 1), -11, vec3(-16, 0.5, 104.5), White, 0);//Bordes
+	CreateCube(12.0f, 0.25f, 1.0f, vec3(0, 0, 1), 0, vec3(-17, 5, 94.5), Pink, 0);//Bordes
+	CreateCube(12.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-17, 2.5, 94.5), White, 0);//Bordes
+	
+
+	CreateCube(22.0f, 0.25f, 1.0f, vec3(0, 0, 1), 0, vec3(-15.5, 5, 104.5), Pink, 0);//Bordes
+	CreateCube(22.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-16, 2.5, 104.5), White, 0);//Bordes
 
 	CreateCube(20.0f, 0.25f, 1.0f, vec3(0, 1, 0), -45, vec3(-33, 5, 97.5), Pink, 0);//Bordes
 	CreateCube(20.0f, 5.0f, 1.0f, vec3(0, 1, 0), -45, vec3(-33, 2.5, 97.5), White, 0);//Bordes
@@ -153,68 +148,64 @@ bool ModuleSceneIntro::Start()
 	CreateCube(1.0f, 0.25f, 10.0f, vec3(0, 1, 0), 45, vec3(36.5, 5, -87), Pink, 0);//Bordes
 	CreateCube(1.0f, 5.0f, 10.0f, vec3(0, 1, 0), 45, vec3(36.5, 2.5, -87), White, 0);//Bordes
 
-	CreateCube(1.0f, 0.25f, 50.0f, vec3(1, 0, 0), 5, vec3(40, 3, -59), Pink, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 50.0f, vec3(1, 0, 0), 5, vec3(40, 0.5, -59), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 50.0f, vec3(1, 0, 0), 0, vec3(40, 5, -59), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 50.0f, vec3(1, 0, 0), 0, vec3(40, 2.5, -59), White, 0);//Bordes
 
-	CreateCube(1.0f, 0.25f, 40.0f, vec3(1, 0, 0), 7.5, vec3(31, 3.5, -61), Pink, 0);//Bordes
-	CreateCube(1.0f, 6.0f, 40.0f, vec3(1, 0, 0), 7.5, vec3(31, 0.5, -61), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 40.0f, vec3(1, 0, 0), 0, vec3(31, 5, -61), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 40.0f, vec3(1, 0, 0), 0, vec3(31, 2.5, -61), White, 0);//Bordes
 
 	CreateCube(2.0f, 4.0f, 1.0f, vec3(1, 0, 0), 0, vec3(30, 1.5, -80.5), White, 0);//Arreglo bajada
 	CreateCube(3.0f, 4.0f, 1.0f, vec3(1, 0, 0), 0, vec3(-31.5, 1.5, -80.5), White, 0);//Arreglo bajada
 
-	CreateCube(40.0f, 0.25f, 1.0f, vec3(0, 1, 0), 25, vec3(22.5, 3, -25.5), Pink, 0);//Bordes
-	CreateCube(40.0f, 5.0f, 1.0f, vec3(0, 1, 0), 25, vec3(22.5, 0.5, -25.5), White, 0);//Bordes
+	CreateCube(40.0f, 0.25f, 1.0f, vec3(0, 1, 0), 25, vec3(22.5, 5, -25.5), Pink, 0);//Bordes
+	CreateCube(40.0f, 5.0f, 1.0f, vec3(0, 1, 0), 25, vec3(22.5, 2.5, -25.5), White, 0);//Bordes
 
-	CreateCube(29.0f, 0.25f, 1.0f, vec3(0, 1, 0), 22, vec3(17.75, 3, -35.5), Pink, 0);//Bordes
-	CreateCube(29.0f, 5.0f, 1.0f, vec3(0, 1, 0), 22, vec3(17.75, 0.5, -35.5), White, 0);//Bordes
+	CreateCube(29.0f, 0.25f, 1.0f, vec3(0, 1, 0), 22, vec3(17.75, 5, -35.5), Pink, 0);//Bordes
+	CreateCube(29.0f, 5.0f, 1.0f, vec3(0, 1, 0), 22, vec3(17.75, 2.5, -35.5), White, 0);//Bordes
 
 	CreateCube(1.0f, 0.25f, 20.0f, vec3(0, 1, 0), -60, vec3(-24.5, 5, -10), Pink, 0);//Bordes
 	CreateCube(1.0f, 5.0f, 20.0f, vec3(0, 1, 0), -60, vec3(-24.5, 2.5, -10), White, 0);//Bordes
 
-	CreateCube(1.0f, 0.25f, 20.0f, vec3(1, 0, 0), -12, vec3(-16, 3, -24), Pink, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 20.0f, vec3(1, 0, 0), -12, vec3(-16, 0.5, -23.5), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 20.0f, vec3(1, 0, 0), 0, vec3(-16, 5, -24), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 20.0f, vec3(1, 0, 0), 0, vec3(-16, 2.5, -23.5), White, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 104.0f, vec3(1, 0, 0), 0, vec3(-16, 0.5, -83), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 104.0f, vec3(1, 0, 0), 0, vec3(-16, 3, -83), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 104.0f, vec3(1, 0, 0), 0, vec3(-16, 2.5, -83), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 104.0f, vec3(1, 0, 0), 0, vec3(-16, 5, -83), Pink, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 119.0f, vec3(1, 0, 0), 0, vec3(-26, 0.5, -80.5), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 119.0f, vec3(1, 0, 0), 0, vec3(-26, 3, -80.5), Pink, 0);//Bordes
+	CreateCube(1.0f, 2.5f, 119.0f, vec3(1, 0, 0), 0, vec3(-26, 1.25, -80.5), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 119.0f, vec3(1, 0, 0), 0, vec3(-26, 2.5, -80.5), Pink, 0);//Bordes
 
-	CreateCube(8.0f, 1.0f, 1.0f, vec3(0, 0, 1), -30, vec3(-29.5, 2.5, -21.5), White, 0);//Bordes
-	CreateCube(7.0f, 1.0f, 1.0f, vec3(0, 0, 1), -30, vec3(-30, 2, -21.5), White, 0);//Bordes
-	CreateCube(6.5f, 1.0f, 1.0f, vec3(0, 0, 1), -30, vec3(-30, 1.5, -21.5), White, 0);//Bordes
-	CreateCube(6.0f, 1.0f, 1.0f, vec3(0, 0, 1), -30, vec3(-30, 1, -21.5), White, 0);//Bordes
-	CreateCube(8.0f, 1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-29.5, 0.5, -21.5), White, 0);//Bordes
-	CreateCube(4.0f, 1.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-30.5, 1.5, -21.5), White, 0);//Bordes
-	CreateCube(8.0f, 0.25f, 1.0f, vec3(0, 0, 1), -30, vec3(-29.5, 3, -21.5), Pink, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 5.0f, vec3(0, 1, 0), -45, vec3(-14.25, 0.5, -136.5), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 5.0f, vec3(0, 1, 0), -45, vec3(-14.25, 3, -136.5), Pink, 0);//Bordes
+	CreateCube(8.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-29.5, 2.5, -21.5), White, 0);//Bordes
+	CreateCube(8.0f, 0.25f, 1.0f, vec3(0, 0, 1), 0, vec3(-29.5, 5, -21.5), Pink, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 15.0f, vec3(0, 1, 0), -45, vec3(-20.75, 0.5, -145), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 15.0f, vec3(0, 1, 0), -45, vec3(-20.75, 3, -145), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 5.0f, vec3(0, 1, 0), -45, vec3(-14.25, 2.5, -136.5), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 5.0f, vec3(0, 1, 0), -45, vec3(-14.25, 5, -136.5), Pink, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 5.0f, vec3(0, 1, 0), 45, vec3(-6.25, 0.5, -136.5), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 5.0f, vec3(0, 1, 0), 45, vec3(-6.25, 3, -136.5), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 15.0f, vec3(0, 1, 0), -45, vec3(-20.75, 2.5, -145), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 15.0f, vec3(0, 1, 0), -45, vec3(-20.75, 5, -145), Pink, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 15.0f, vec3(0, 1, 0), 45, vec3(-0.75, 0.5, -145), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 15.0f, vec3(0, 1, 0), 45, vec3(-0.75, 3, -145), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 5.0f, vec3(0, 1, 0), 45, vec3(-6.25, 2.5, -136.5), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 5.0f, vec3(0, 1, 0), 45, vec3(-6.25, 5, -136.5), Pink, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 5.0f, vec3(0, 1, 0), 90, vec3(-10.25, 0.5, -138.25), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 5.0f, vec3(0, 1, 0), 90, vec3(-10.25, 3, -138.25), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 15.0f, vec3(0, 1, 0), 45, vec3(-0.75, 2.5, -145), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 15.0f, vec3(0, 1, 0), 45, vec3(-0.75, 5, -145), Pink, 0);//Bordes
 
-	CreateCube(1.0f, 5.0f, 10.0f, vec3(0, 1, 0), 90, vec3(-10.5, 0.5, -150), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 10.0f, vec3(0, 1, 0), 90, vec3(-10.5, 3, -150), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 5.0f, vec3(0, 1, 0), 90, vec3(-10.25, 2.5, -138.25), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 5.0f, vec3(0, 1, 0), 90, vec3(-10.25, 5, -138.25), Pink, 0);//Bordes
+
+	CreateCube(1.0f, 5.0f, 10.0f, vec3(0, 1, 0), 90, vec3(-10.5, 2.5, -150), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 10.0f, vec3(0, 1, 0), 90, vec3(-10.5, 5, -150), Pink, 0);//Bordes
 
 	CreateCube(1.0f, 0.25f, 100.0f, vec3(0, 1, 0), 0, vec3(-40, 5, 41), Pink, 0);//Bordes
 	CreateCube(1.0f, 5.0f, 100.0f, vec3(0, 1, 0), 0, vec3(-40, 2.5, 41), White, 0);//Bordes
 	CreateCube(1.0f, 0.25f, 90.0f, vec3(0, 1, 0), 0, vec3(-33, 5, 39.5), Pink, 0);//Bordes
 	CreateCube(1.0f, 5.0f, 90.0f, vec3(0, 1, 0), 0, vec3(-33, 2.5, 39.5), White, 0);//Bordes
 
-	CreateCube(1.0f, 0.25f, 130.0f, vec3(0, 1, 0), 0, vec3(-4.5, 3, -70), Pink, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 130.0f, vec3(0, 1, 0), 0, vec3(-4.5, 0.5, -70), White, 0);//Bordes
-	CreateCube(1.0f, 0.25f, 110.0f, vec3(0, 1, 0), 0, vec3(4.5, 3, -85), Pink, 0);//Bordes
-	CreateCube(1.0f, 5.0f, 110.0f, vec3(0, 1, 0), 0, vec3(4.5, 0.5, -85), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 130.0f, vec3(0, 1, 0), 0, vec3(-4.5, 5, -70), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 130.0f, vec3(0, 1, 0), 0, vec3(-4.5, 2.5, -70), White, 0);//Bordes
+	CreateCube(1.0f, 0.25f, 110.0f, vec3(0, 1, 0), 0, vec3(4.5, 5, -85), Pink, 0);//Bordes
+	CreateCube(1.0f, 5.0f, 110.0f, vec3(0, 1, 0), 0, vec3(4.5, 2.5, -85), White, 0);//Bordes
 
 
 
