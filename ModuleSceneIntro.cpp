@@ -60,7 +60,8 @@ bool ModuleSceneIntro::Start()
 
 
 
-
+	CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(2.25, 0.5, -4), Pink, 100);//Puerta
+	CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(-2.25, 0.5, -4), Pink, 100);//puerta
 
 	
 	CreateCube(1.0f, 0.8f, 0.1f, vec3(0, 0, 1), 0, vec3(0, 6.5, -5), Black,0);//Flag
@@ -261,17 +262,6 @@ void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, v
 	wall.pb_cube = App->physics->AddBody(wall.cube, mass);
 	wall.pb_cube->SetPos(pos.x, pos.y, pos.z);
 	circuit.add(wall);
-}
-
-void ModuleSceneIntro::createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos, Color colorcube) {
-	Cube* cube=new Cube(x,y,z);
-	cube->SetPos(pos.x, pos.y, pos.z);
-	cube->SetRotation(angle, axis);
-	cube->color = colorcube;
-
-
-	cubelist.add(cube);
-
 }
 
 void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos, Color colorcylinder) {

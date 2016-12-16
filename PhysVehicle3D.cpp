@@ -26,6 +26,7 @@ void PhysVehicle3D::Render()
 	Cylinder wheel;
 
 	wheel.color = Blue;
+	
 
 	for(int i = 0; i < vehicle->getNumWheels(); ++i)
 	{
@@ -39,9 +40,13 @@ void PhysVehicle3D::Render()
 	}
 
 	Cube chassis(info.chassis_size.x, info.chassis_size.y, info.chassis_size.z);
+
 	vehicle->getChassisWorldTransform().getOpenGLMatrix(&chassis.transform);
+
 	btQuaternion q = vehicle->getChassisWorldTransform().getRotation();
+
 	btVector3 offset(info.chassis_offset.x, info.chassis_offset.y, info.chassis_offset.z);
+
 	offset = offset.rotate(q.getAxis(), q.getAngle());
 
 	chassis.color = Pink;
@@ -50,7 +55,37 @@ void PhysVehicle3D::Render()
 	chassis.transform.M[14] += offset.getZ();
 
 
+
+	Cube tunning(1.5,0.2,1);
+
+	vehicle->getChassisWorldTransform().getOpenGLMatrix(&tunning.transform);
+
+	btVector3 tunningoffset(info.tunning_offset.x, info.tunning_offset.y, info.tunning_offset.z);
+
+	tunningoffset = tunningoffset.rotate(q.getAxis(), q.getAngle());
+
+	tunning.color = White;
+	tunning.transform.M[12] += tunningoffset.getX();
+	tunning.transform.M[13] += tunningoffset.getY();
+	tunning.transform.M[14] += tunningoffset.getZ();
+
+	Cube tunning2(1.5, 0.2, 1);
+
+	vehicle->getChassisWorldTransform().getOpenGLMatrix(&tunning2.transform);
+
+	btVector3 tunning2offset(info.tunning2_offset.x, info.tunning2_offset.y, info.tunning2_offset.z);
+
+	tunning2offset = tunning2offset.rotate(q.getAxis(), q.getAngle());
+
+	tunning2.color = White;
+	tunning2.transform.M[12] += tunning2offset.getX();
+	tunning2.transform.M[13] += tunning2offset.getY();
+	tunning2.transform.M[14] += tunning2offset.getZ();
+
+
 	chassis.Render();
+	tunning.Render();
+	tunning2.Render();
 }
 
 // ----------------------------------------------------------------------------
