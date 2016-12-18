@@ -284,12 +284,12 @@ update_status ModuleSceneIntro::Update(float dt)
 
 	}
 
-	char title[80];
+	/*char title[80];
 	
 
 
 	sprintf_s(title, "LAPS: %d",laps);
-	App->window->SetTitle(title);
+	App->window->SetTitle(title);*/
 	
 
 	return UPDATE_CONTINUE;
