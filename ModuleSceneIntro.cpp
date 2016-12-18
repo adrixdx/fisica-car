@@ -24,7 +24,7 @@ bool ModuleSceneIntro::Start()
 	
 	Cube sensor_cube;
 	sensor_cube.size = { 30, 1, 1 };
-	sensor_cube.SetPos(5, 1.5, -5);
+	sensor_cube.SetPos(5, 1.5, -10);
 
 	sensor_test = App->physics->AddBody(sensor_cube, 0);
 	sensor_test->SetAsSensor(true);
@@ -33,7 +33,11 @@ bool ModuleSceneIntro::Start()
 
 	//RAMPAGE
 	CreateCube(30, 2, 1, Cian, 100000, 5, 1.5, 0, 0, { 0, 0, 0 });
-	CreateCube(30, 10, 0.5, Cian, 100000, 5, 1.5, -5, 45, { 1, 0, 0 });
+	CreateCube(30, 10, 0.5, Cian, 100000, 5, 1.5, -5, 50, { 1, 0, 0 });
+
+	CreateCube(30, 4, 1, Cian, 100000, 5, 1.5, 35, 0, { 0, 0, 0 });
+	CreateCube(30, 0.5, 30, Cian, 100000, 5, 4, 50, 0, { 0, 0, 0 });
+	CreateCube(30, 3, 1, Cian, 100000, 5, 1.5, 65, 0, { 0, 0, 0 });
 
 
 	Cube sensor_cube2;
@@ -62,11 +66,11 @@ bool ModuleSceneIntro::Start()
 	CreateCube(2, 3, 9, Black, 100000, -25, 1.5, 60, 90, { 0, 1, 0 }); // C2
 	CreateCube(3, 3, 14, Cian, 100000, -35, 1.5, 55,  45, { 0, 1, 0 }); // C3
 
-	CreateCube(3, 3, 22, Cian, 100000, 15, 1.5, 70, -26.56, { 0, 1, 0 }); // D1
+	/*CreateCube(3, 3, 22, Cian, 100000, 15, 1.5, 70, -26.56, { 0, 1, 0 }); // D1
 	CreateCube(2, 3, 14, Black, 100000, 5, 1.5, 85, -45, { 0, 1, 0 }); // D2
 	CreateCube(3, 3, 30, Cian, 100000, -25, 1.5, 95, 90, { 0, 1, 0 }); // D3
 	CreateCube(2, 3, 14, Black, 100000, -55, 1.5, 85, 45, { 0, 1, 0 }); // D4
-	CreateCube(3, 3, 22, Cian, 100000, -65, 1.5, 70, 26.56, { 0, 1, 0 }); // D1
+	CreateCube(3, 3, 22, Cian, 100000, -65, 1.5, 70, 26.56, { 0, 1, 0 }); // D1*/
 
 	CreateCube(3, 3, 14, Cian, 100000, -15, 1.5, -55, 45, { 0, 1, 0 }); // E1
 	CreateCube(2, 3, 9, Black, 100000, -25, 1.5, -60, 90, { 0, 1, 0 }); // E2
