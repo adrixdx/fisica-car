@@ -22,6 +22,14 @@ bool ModuleSceneIntro::Start()
 	App->camera->Move(vec3(0,0, 0));
 	App->camera->LookAt(vec3(0, 1, 0));
 	
+	Cube sensor_cube;
+	sensor_cube.size = { 1, 1, 10 };
+	sensor_cube.SetPos(0, 1.5, 0);
+
+	sensor_test = App->physics->AddBody(sensor_cube, 0);
+	sensor_test->SetAsSensor(true);
+
+	sensor_test->collision_listeners.add(this);
 
 	// STAGE 1
 
@@ -261,6 +269,12 @@ update_status ModuleSceneIntro::Update(float dt)
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
+	if (body1 == sensor_test && body2 == (PhysBody3D*)App->player->vehicle)
+	{
+		LOG("hey!sdfbisddbfljbsdof");
+	}
+
+	//if(body1 == sensor_test && body2 == (PhysBody3D*)App->player->vehicle)
 }
 
 void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, Color color, float mass, float x_pos, float y_pos, float z_pos, float degrees, vec3 axis)

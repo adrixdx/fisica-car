@@ -22,11 +22,13 @@ public:
 	btTransform* GetBTTransform()const;
 	void SetTransform(const float* matrix) const;
 	void SetPos(float x, float y, float z);
+	void SetAsSensor(bool is_sensor);
 	const vec3 GetPos()const;
 
 private:
 	btRigidBody* body = nullptr;
 	vec3 vehicle_position;
+	bool sensor = false;
 
 public:
 	p2List<Module*> collision_listeners;

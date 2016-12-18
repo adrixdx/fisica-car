@@ -97,6 +97,7 @@ void Primitive::SetRotation(float angle, const vec3 &u)
 void Primitive::Scale(float x, float y, float z)
 {
 	transform.scale(x, y, z);
+	
 }
 
 // CUBE ============================================
