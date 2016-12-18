@@ -97,7 +97,7 @@ bool ModulePlayer::Start()
 	car.wheels[3].steering = false;
 
 	vehicle = App->physics->AddVehicle(car);
-	vehicle->SetPos(0, 0, 0);
+	vehicle->SetPos(5, 0, 5);
 	
 	return true;
 }
@@ -147,7 +147,7 @@ update_status ModulePlayer::Update(float dt)
 
 	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_REPEAT)
 	{
-		vehicle->SetPos(0, 5, 0);
+		vehicle->SetPos(0, 5, 5);
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)
@@ -174,9 +174,10 @@ update_status ModulePlayer::Update(float dt)
 
 	vehicle->Render();
 
-	char title[80];
+
+	/*char title[80];
 	sprintf_s(title, "%.1f Km/h", vehicle->GetKmh());
-	App->window->SetTitle(title);
+	App->window->SetTitle(title);*/
 
 	return UPDATE_CONTINUE;
 }

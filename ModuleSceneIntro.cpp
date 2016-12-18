@@ -23,13 +23,29 @@ bool ModuleSceneIntro::Start()
 	App->camera->LookAt(vec3(0, 1, 0));
 	
 	Cube sensor_cube;
-	sensor_cube.size = { 1, 1, 10 };
-	sensor_cube.SetPos(0, 1.5, 0);
+	sensor_cube.size = { 30, 1, 1 };
+	sensor_cube.SetPos(5, 1.5, -5);
 
 	sensor_test = App->physics->AddBody(sensor_cube, 0);
 	sensor_test->SetAsSensor(true);
 
 	sensor_test->collision_listeners.add(this);
+
+	//RAMPAGE
+	CreateCube(30, 2, 1, Cian, 100000, 5, 1.5, 0, 0, { 0, 0, 0 });
+	CreateCube(30, 10, 0.5, Cian, 100000, 5, 1.5, -5, 45, { 1, 0, 0 });
+
+
+	Cube sensor_cube2;
+	sensor_cube2.size = { 30, 1, 1 };
+	sensor_cube2.SetPos(-55, 1.5, 0);
+
+	interrupt = App->physics->AddBody(sensor_cube2, 0);
+	interrupt->SetAsSensor(true);
+
+	interrupt->collision_listeners.add(this);
+
+
 
 	// STAGE 1
 
@@ -37,30 +53,30 @@ bool ModuleSceneIntro::Start()
 
 
 	CreateCube(3, 3, 100, Cian, 100000, -10, 1.5, 0, 0, { 0, 0, 0 }); // A  
-	CreateCube(3, 3, 100, Black, 100000, 10, 1.5, 0, 0, { 0, 0, 0 });
+	CreateCube(3, 3, 100, Black, 100000, 20, 1.5, 0, 0, { 0, 0, 0 });
 
 	CreateCube(3, 3, 100, Black, 100000, -40, 1.5, 0, 0, { 0, 0, 0 }); // B  
-	CreateCube(3, 3, 100, Cian, 100000, -60, 1.5, 0, 0, { 0, 0, 0 });
+	CreateCube(3, 3, 100, Cian, 100000, -70, 1.5, 0, 0, { 0, 0, 0 });
 
 	CreateCube(3, 3, 14, Cian, 100000, -15, 1.5, 55, -45, { 0, 1, 0 }); // C1
 	CreateCube(2, 3, 9, Black, 100000, -25, 1.5, 60, 90, { 0, 1, 0 }); // C2
 	CreateCube(3, 3, 14, Cian, 100000, -35, 1.5, 55,  45, { 0, 1, 0 }); // C3
 
-	CreateCube(3, 3, 22, Cian, 100000, 5, 1.5, 60, -26.56, { 0, 1, 0 }); // D1
-	CreateCube(2, 3, 14, Black, 100000, -5, 1.5, 75, -45, { 0, 1, 0 }); // D2
-	CreateCube(3, 3, 30, Cian, 100000, -25, 1.5, 80, 90, { 0, 1, 0 }); // D3
-	CreateCube(2, 3, 14, Black, 100000, -45, 1.5, 75, 45, { 0, 1, 0 }); // D4
-	CreateCube(3, 3, 22, Cian, 100000, -55, 1.5, 60, 26.56, { 0, 1, 0 }); // D1
+	CreateCube(3, 3, 22, Cian, 100000, 15, 1.5, 70, -26.56, { 0, 1, 0 }); // D1
+	CreateCube(2, 3, 14, Black, 100000, 5, 1.5, 85, -45, { 0, 1, 0 }); // D2
+	CreateCube(3, 3, 30, Cian, 100000, -25, 1.5, 95, 90, { 0, 1, 0 }); // D3
+	CreateCube(2, 3, 14, Black, 100000, -55, 1.5, 85, 45, { 0, 1, 0 }); // D4
+	CreateCube(3, 3, 22, Cian, 100000, -65, 1.5, 70, 26.56, { 0, 1, 0 }); // D1
 
 	CreateCube(3, 3, 14, Cian, 100000, -15, 1.5, -55, 45, { 0, 1, 0 }); // E1
 	CreateCube(2, 3, 9, Black, 100000, -25, 1.5, -60, 90, { 0, 1, 0 }); // E2
 	CreateCube(3, 3, 14, Cian, 100000, -35, 1.5, -55, -45, { 0, 1, 0 }); // E3
 
-	CreateCube(3, 3, 22, Cian, 100000, 5, 1.5, -60, 26.56, { 0, 1, 0 }); // F1
-	CreateCube(2, 3, 14, Black, 100000, -5, 1.5, -75, 45, { 0, 1, 0 }); // F2
-	CreateCube(3, 3, 30, Cian, 100000, -25, 1.5, -80, 90, { 0, 1, 0 }); // F3
-	CreateCube(2, 3, 14, Black, 100000, -45, 1.5, -75, -45, { 0, 1, 0 }); // F4
-	CreateCube(3, 3, 22, Cian, 100000, -55, 1.5, -60, -26.56, { 0, 1, 0 }); // F1
+	CreateCube(3, 3, 22, Cian, 100000, 15, 1.5, -60, 26.56, { 0, 1, 0 }); // F1
+	CreateCube(2, 3, 14, Black, 100000, 5, 1.5, -75, 45, { 0, 1, 0 }); // F2
+	CreateCube(3, 3, 30, Cian, 100000, -25, 1.5, -85, 90, { 0, 1, 0 }); // F3
+	CreateCube(2, 3, 14, Black, 100000, -55, 1.5, -75, -45, { 0, 1, 0 }); // F4
+	CreateCube(3, 3, 22, Cian, 100000, -65, 1.5, -60, -26.56, { 0, 1, 0 }); // F1
 
 
 
@@ -263,6 +279,13 @@ update_status ModuleSceneIntro::Update(float dt)
 
 	}
 
+	char title[80];
+	
+
+
+	sprintf_s(title, "LAPS: %d",laps);
+	App->window->SetTitle(title);
+	
 
 	return UPDATE_CONTINUE;
 }
@@ -271,9 +294,19 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
 	if (body1 == sensor_test && body2 == (PhysBody3D*)App->player->vehicle)
 	{
-		LOG("hey!sdfbisddbfljbsdof");
+		if (sensor_lap == true)
+		{
+			laps++;
+			sensor_lap = false;
+		}
+		
 	}
 
+
+	if (body1 == interrupt && body2 == (PhysBody3D*)App->player->vehicle)
+	{
+		sensor_lap = true;
+	}
 	//if(body1 == sensor_test && body2 == (PhysBody3D*)App->player->vehicle)
 }
 
