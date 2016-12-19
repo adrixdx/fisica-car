@@ -3,7 +3,9 @@
 #include "PhysBody3D.h"
 #include "ModuleCamera3D.h"
 #include "PhysVehicle3D.h"
+#include "ModulePlayer.h"
 
+struct PhysVehicle3D;
 
 ModuleCamera3D::ModuleCamera3D(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -13,11 +15,12 @@ ModuleCamera3D::ModuleCamera3D(Application* app, bool start_enabled) : Module(ap
 	Y = vec3(0.0f, 1.0f, 0.0f);
 	Z = vec3(0.0f, 0.0f, 1.0f);
 
-	Position = vec3(0.0f, 0.0f, 5.0f);
+	Position = vec3(0.0f, 0.0f, 0.0f);
 	Reference = vec3(0.0f, 0.0f, 0.0f);
 
 	CameraP = vec3(0.0f, 0.0f, 0.0f);
 	Direction = vec3(0.0f, 0.0f, 0.0f);
+
 	Target = NULL;
 	
 
@@ -33,9 +36,10 @@ bool ModuleCamera3D::Start()
 {
 	LOG("Setting up the camera");
 	bool ret = true;
-
-	CameraP = vec3(20.0f, 20, 20.0f);
-	Direction = vec3(10, 10, 10);
+	
+	
+	CameraP = vec3(0.0f, 2.0f, -5.0f);
+	Direction = vec3(0, 2, 0);
 	Target = App->player->vehicle;
 
 	return ret;
@@ -115,8 +119,8 @@ update_status ModuleCamera3D::Update(float dt)
 		Target->GetTransform(&vehicle_trans);
 
 		X = vec3(vehicle_trans[0],vehicle_trans[1], vehicle_trans[2]);
-		Y = vec3(vehicle_trans[3], vehicle_trans[4], vehicle_trans[5]);
-		Z= vec3(vehicle_trans[6], vehicle_trans[7], vehicle_trans[8]);
+		Y = vec3(vehicle_trans[4], vehicle_trans[5], vehicle_trans[6]);
+		Z= vec3(vehicle_trans[8], vehicle_trans[9], vehicle_trans[10]);
 
 		VehicleP = vehicle_trans.translation();
 		App ->camera->Look((VehicleP + CameraP) - Z * 10, Direction+VehicleP,true);
