@@ -35,9 +35,9 @@ bool ModuleSceneIntro::Start()
 	CreateCube(60, 2, 1, Cian, 100000, 5, 1.5, 0, 0, { 0, 0, 0 });
 	CreateCube(60, 10, 0.5, Cian, 100000, 5, 1.5, -5, 50, { 1, 0, 0 });
 
-	CreateCube(60, 4, 1, Cian, 100000, 5, 1.5, 50, 0, { 0, 0, 0 });
-	CreateCube(60, 0.5, 50, Cian, 100000, 5, 4, 75, 0, { 0, 0, 0 });
-	CreateCube(60, 2, 1, Cian, 100000, 5, 1.5, 100, 0, { 0, 0, 0 });
+	CreateCube(60, 4, 1, Cian, 100000, 5, 1.5, 40, 0, { 0, 0, 0 });
+	CreateCube(60, 0.5, 50, Cian, 100000, 5, 4, 65, 0, { 0, 0, 0 });
+	CreateCube(60, 2, 1, Cian, 100000, 5, 1.5, 90, 0, { 0, 0, 0 });
 
 
 	Cube sensor_cube2;
