@@ -6,6 +6,15 @@
 class btRaycastVehicle;
 struct PhysBody3D;
 
+struct Wing {
+	vec3 wing_connection; // origin of the ray. Must come from within the chassis
+	vec3 wing_direction;
+	vec3 wing_axis;
+	float wing_x;
+	float wing_y;
+	float wing_z;
+	float wing_suspensionRestLength;
+};
 
 struct Wheel
 {
@@ -41,6 +50,7 @@ struct VehicleInfo
 	float maxSuspensionForce; // defaults to 6000 / max force to the chassis
 
 	Wheel* wheels;
+	Wing* wing;
 	int num_wheels;
 };
 

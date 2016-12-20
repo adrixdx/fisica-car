@@ -5,6 +5,8 @@
 #include "PhysVehicle3D.h"
 #include "PhysBody3D.h"
 
+struct Wing;
+Wing* wing;
 ModulePlayer::ModulePlayer(Application* app, bool start_enabled) : Module(app, start_enabled), vehicle(NULL)
 {
 	turn = acceleration = brake = 0.0f;
@@ -34,12 +36,22 @@ bool ModulePlayer::Start()
 	car.frictionSlip = 50.5;
 	car.maxSuspensionForce = 6000.0f;
 
-	
+	// Wing properties ---------------------------------------
+	float wing_connection_height = 0.6f;
+	float wing_x = 0.3f;
+	float wing_y = 0.25f;
+	float wing_z = 0.25f;
+	float wing_suspensionRestLength = 0.6f;
+	vec3 wing_direction(0, -1, 0);
+	vec3 wing_axis(-1, 0, 0);
+
+
 	// Wheel properties ---------------------------------------
 	float connection_height = 0.6f;
 	float wheel_radius = 0.3f;
 	float wheel_width = 0.25f;
 	float suspensionRestLength = 0.6f;
+
 
 	// Don't change anything below this line ------------------
 
@@ -52,6 +64,15 @@ bool ModulePlayer::Start()
 	car.num_wheels = 4;
 	car.wheels = new Wheel[4];
 
+	//Wings---------------------------
+	car.wing.wing_connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
+	car.wing->wing_direction = wing_direction;
+	car.wing->wing_axis = wing_axis;
+	car.wing->wing_suspensionRestLength = wing_suspensionRestLength;  
+	car.wing->wing_x = wing_x;
+	car.wing->wing_y = wing_y;
+	car.wing->wing_z = wing_z;
+	 
 	// FRONT-LEFT ------------------------
 	car.wheels[0].connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
 	car.wheels[0].direction = direction;
