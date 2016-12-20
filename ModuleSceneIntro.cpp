@@ -19,6 +19,8 @@ bool ModuleSceneIntro::Start()
 {
 	LOG("Loading Intro assets");
 	bool ret = true;
+	App->audio->PlayMusic("Game/aceleracion_1.ogg", 1.0f);
+	fx = App->audio->LoadFx("Game/choque.wav");
 
 	App->camera->Move(vec3(0,0, 0));
 	App->camera->LookAt(vec3(0, 1, 0));

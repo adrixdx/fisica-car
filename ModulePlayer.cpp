@@ -5,7 +5,7 @@
 #include "PhysVehicle3D.h"
 #include "PhysBody3D.h"
 #include "ModuleAudio.h"
-class ModuleAudio;
+
 struct Wing;
 Wing* wing;
 ModulePlayer::ModulePlayer(Application* app, bool start_enabled) : Module(app, start_enabled), vehicle(NULL)
@@ -144,8 +144,8 @@ update_status ModulePlayer::Update(float dt)
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
 		acceleration = MAX_ACCELERATION*2;
-		App->audio->PlayMusic("Game/aceleracio_1.ogg", 1.0f);
-		//fx = App->audio->LoadFx("Game/choque.wav");
+		App->audio->PlayMusic("Game/aceleracion_1.ogg", 1.0f);
+		fx = App->audio->LoadFx("Game/choque.wav");
 	}
 
 	if(App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
