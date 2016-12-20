@@ -51,6 +51,7 @@ struct VehicleInfo
 
 	Wheel* wheels;
 	Wing* wing;
+	int num_wings=2;
 	int num_wheels;
 };
 
