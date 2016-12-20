@@ -127,7 +127,7 @@ bool ModulePlayer::Start()
 	car.wheels[4].axis = axis*2;
 	car.wheels[4].suspensionRestLength = suspensionRestLength;
 	car.wheels[4].radius = wheel_radius;
-	car.wheels[4].width = wheel_width;
+	car.wheels[4].width = wheel_width*2;
 	car.wheels[4].front = true;
 	car.wheels[4].drive = true;
 	car.wheels[4].brake = true;
