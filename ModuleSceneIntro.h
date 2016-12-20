@@ -34,7 +34,9 @@ public:
 	void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos, Color colorcylinder);
 
 public:
-	
+
+	PhysBody3D* sensor_test;
+
 	PhysBody3D* pb_lilCube;
 	Cube lilCube;
 	p2List<Object> circuit;
