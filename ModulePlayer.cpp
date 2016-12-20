@@ -65,13 +65,13 @@ bool ModulePlayer::Start()
 	car.wheels = new Wheel[4];
 
 	//Wings---------------------------
-	car.wing.wing_connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
+	/*car.wing.wing_connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
 	car.wing->wing_direction = wing_direction;
 	car.wing->wing_axis = wing_axis;
 	car.wing->wing_suspensionRestLength = wing_suspensionRestLength;  
 	car.wing->wing_x = wing_x;
 	car.wing->wing_y = wing_y;
-	car.wing->wing_z = wing_z;
+	car.wing->wing_z = wing_z;*/
 	 
 	// FRONT-LEFT ------------------------
 	car.wheels[0].connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
