@@ -4,6 +4,7 @@
 #include "Primitive.h"
 #include "PhysVehicle3D.h"
 #include "PhysBody3D.h"
+#include "ModuleAudio.h"
 
 struct Wing;
 Wing* wing;
@@ -28,7 +29,7 @@ bool ModulePlayer::Start()
 	car.tunning_offset.Set(1.25, 0.95, 0);
 	car.tunning2_offset.Set(-1.25, 0.95, 0);
 	
-	car.mass = 1000.0f;
+	car.mass = 1500.0f;
 	car.suspensionStiffness = 15.88f;
 	car.suspensionCompression = 0.83f;
 	car.suspensionDamping = 0.88f;
@@ -143,6 +144,7 @@ update_status ModulePlayer::Update(float dt)
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
 		acceleration = MAX_ACCELERATION*2;
+		App->audio->PlayMusic("Game/aceleracio_1.ogg", 1.0f);
 	}
 
 	if(App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
