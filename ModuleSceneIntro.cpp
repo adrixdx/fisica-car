@@ -23,13 +23,22 @@ bool ModuleSceneIntro::Start()
 	App->camera->LookAt(vec3(0, 1, 0));
 	
 	Cube sensor_cube;
-	sensor_cube.size = { 1, 1, 10 };
+	sensor_cube.size = { 10, 1, 1 };
 	sensor_cube.SetPos(0, 1.5, 0);
 
-	sensor_test = App->physics->AddBody(sensor_cube, 0);
-	sensor_test->SetAsSensor(true);
+	sensor_lap = App->physics->AddBody(sensor_cube, 0);
+	sensor_lap->SetAsSensor(true);
 
-	sensor_test->collision_listeners.add(this);
+	sensor_lap->collision_listeners.add(this);
+
+	Cube sensor_cube2;
+	sensor_cube2.size = { 5, 1, 1 };
+	sensor_cube2.SetPos(-37, 1.5, 0);
+
+	interruptor = App->physics->AddBody(sensor_cube2, 0);
+	interruptor->SetAsSensor(true);
+
+	interruptor->collision_listeners.add(this);
 
 	// STAGE 1
 
@@ -250,13 +259,30 @@ update_status ModuleSceneIntro::Update(float dt)
 
 	}
 
+	char title[80];
+	sprintf_s(title, "LAPS: %d", laps);
+	App->window->SetTitle(title);
+
 
 	return UPDATE_CONTINUE;
 }
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
-	
+	if(body1 == sensor_lap && body2 == (PhysBody3D*)App->player->vehicle)
+	{
+		if (is_allowed == true)
+		{
+			laps++;
+			is_allowed = false;
+		}
+	}
+
+	if (body1 == interruptor && body2 == (PhysBody3D*)App->player->vehicle)
+	{
+		if (is_allowed == false)
+			is_allowed = true;
+	}
 }
 
 void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, vec3 axis, float degrees, vec3 pos, Color color, float mass)

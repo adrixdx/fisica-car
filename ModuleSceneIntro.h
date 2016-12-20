@@ -34,8 +34,11 @@ public:
 	void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos, Color colorcylinder);
 
 public:
+	int laps = 0;
+	bool is_allowed = false;
 
-	PhysBody3D* sensor_test;
+	PhysBody3D* sensor_lap;
+	PhysBody3D* interruptor;
 
 	PhysBody3D* pb_lilCube;
 	Cube lilCube;
