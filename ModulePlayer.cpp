@@ -145,7 +145,7 @@ update_status ModulePlayer::Update(float dt)
 	{
 		acceleration = MAX_ACCELERATION*2;
 		App->audio->PlayMusic("Game/aceleracio_1.ogg", 1.0f);
-		fx = App->audio->LoadFx("Game/choque.wav");
+		//fx = App->audio->LoadFx("Game/choque.wav");
 	}
 
 	if(App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
