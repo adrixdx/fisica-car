@@ -61,17 +61,17 @@ bool ModulePlayer::Start()
 	vec3 direction(0,-1,0);
 	vec3 axis(-1,0,0);
 	
-	car.num_wheels = 5;
+	car.num_wheels = 4;
 	car.wheels = new Wheel[4];
 
 	//Wings---------------------------
-	/*car.wing.wing_connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
+	car.wing.wing_connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
 	car.wing->wing_direction = wing_direction;
 	car.wing->wing_axis = wing_axis;
 	car.wing->wing_suspensionRestLength = wing_suspensionRestLength;  
 	car.wing->wing_x = wing_x;
 	car.wing->wing_y = wing_y;
-	car.wing->wing_z = wing_z;*/
+	car.wing->wing_z = wing_z;
 	 
 	// FRONT-LEFT ------------------------
 	car.wheels[0].connection.Set(half_width - 0.3f * wheel_width, connection_height, half_length - wheel_radius);
@@ -82,7 +82,7 @@ bool ModulePlayer::Start()
 	car.wheels[0].width = wheel_width;
 	car.wheels[0].front = true;
 	car.wheels[0].drive = true;
-	car.wheels[0].brake = true;
+	car.wheels[0].brake = false;
 	car.wheels[0].steering = true;
 
 	// FRONT-RIGHT ------------------------
@@ -94,7 +94,7 @@ bool ModulePlayer::Start()
 	car.wheels[1].width = wheel_width;
 	car.wheels[1].front = true;
 	car.wheels[1].drive = true;
-	car.wheels[1].brake = true;
+	car.wheels[1].brake = false;
 	car.wheels[1].steering = true;
 
 	// REAR-LEFT ------------------------
@@ -120,18 +120,6 @@ bool ModulePlayer::Start()
 	car.wheels[3].drive = false;
 	car.wheels[3].brake = true;
 	car.wheels[3].steering = false;
-
-	//New Wheel------------
-	car.wheels[4].connection.Set(0, 1, -half_length + wheel_radius-0.25);
-	car.wheels[4].direction = direction*2;
-	car.wheels[4].axis = axis*2;
-	car.wheels[4].suspensionRestLength = suspensionRestLength;
-	car.wheels[4].radius = wheel_radius;
-	car.wheels[4].width = wheel_width;
-	car.wheels[4].front = true;
-	car.wheels[4].drive = true;
-	car.wheels[4].brake = true;
-	car.wheels[4].steering = true;
 
 	vehicle = App->physics->AddVehicle(car);
 	vehicle->SetPos(0, 0, 0);

@@ -23,8 +23,6 @@ PhysVehicle3D::~PhysVehicle3D()
 // ----------------------------------------------------------------------------
 void PhysVehicle3D::Render()
 {
-	VehicleInfo car;
-
 	Cube wing;
 
 	Cylinder wheel;
@@ -33,7 +31,7 @@ void PhysVehicle3D::Render()
 
 	wheel.color = Blue;
 	
-
+	wing.Render();
 
 	for(int i = 0; i < vehicle->getNumWheels(); ++i)
 	{
@@ -93,7 +91,6 @@ void PhysVehicle3D::Render()
 	chassis.Render();
 	tunning.Render();
 	tunning2.Render();
-	wing.Render();
 }
 
 // ----------------------------------------------------------------------------
