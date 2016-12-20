@@ -5,7 +5,7 @@
 #include "ModuleAudio.h"
 
 struct PhysVehicle3D;
-
+class ModuleAudio;
 #define MAX_ACCELERATION 2000.0f
 #define TURN_DEGREES 40.0f * DEGTORAD
 #define BRAKE_POWER 1000.0f
@@ -21,7 +21,7 @@ public:
 	bool CleanUp();
 
 public:
-
+	uint fx = 0;
 	PhysVehicle3D* vehicle;
 	float turn;
 	float acceleration;
