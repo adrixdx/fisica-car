@@ -19,8 +19,10 @@ bool ModuleSceneIntro::Start()
 {
 	LOG("Loading Intro assets");
 	bool ret = true;
-	App->audio->PlayMusic("Game/aceleracion_1.ogg", 1.0f);
-	fx = App->audio->LoadFx("Game/choque.wav");
+	App->audio->Init();
+	App->audio->PlayMusic("Game/aceleracion_1.ogg", 2.0f);
+	//fx = App->audio->LoadFx("Game/choque.wav");
+	
 
 	App->camera->Move(vec3(0,0, 0));
 	App->camera->LookAt(vec3(0, 1, 0));
@@ -222,6 +224,7 @@ bool ModuleSceneIntro::CleanUp()
 {
 	LOG("Unloading Intro scene");
 	circuit.clear();
+	App->audio->CleanUp();
 	return true;
 }
 
@@ -234,6 +237,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	p.Render();
 
 
+	
 
 	
 	p2List_item<Object>* item = circuit.getFirst();
@@ -252,6 +256,8 @@ update_status ModuleSceneIntro::Update(float dt)
 
 void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 {
+
+	fx = App->audio->LoadFx("Game/choque.wav");
 }
 
 void ModuleSceneIntro::CreateCube(float x_scale, float y_scale, float z_scale, vec3 axis, float degrees, vec3 pos, Color color, float mass)
