@@ -22,7 +22,7 @@ bool ModulePlayer::Start()
 
 	// Car properties ----------------------------------------
 	car.chassis_size.Set(1, 1, 4);
-	car.chassis_offset.Set(0, 0.75, 0);
+	car.chassis_offset.Set(0, 0.95, 0);
 	car.tunning_offset.Set(1.25, 0.95, 0);
 	car.tunning2_offset.Set(-1.25, 0.95, 0);
 	

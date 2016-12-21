@@ -219,6 +219,8 @@ bool ModuleSceneIntro::CleanUp()
 {
 	LOG("Unloading Intro scene");
 	circuit.clear();
+	cubelist.clear();
+	cylinderlist.clear();
 	return true;
 }
 
