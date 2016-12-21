@@ -5,6 +5,7 @@
 #include "PhysBody3D.h"
 #include "Color.h"
 #include "ModulePlayer.h"
+#include <ctime>
 
 ModuleSceneIntro::ModuleSceneIntro(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -258,10 +259,33 @@ update_status ModuleSceneIntro::Update(float dt)
 		item = item->next;
 
 	}
+	
+	
+	
+	secondsPassed -= 0.01f;
 
-	char title[80];
-	sprintf_s(title, "LAPS: %d", laps);
-	App->window->SetTitle(title);
+	if(secondsPassed > 0.0f && win_condition == false)
+	{
+		char title[80];
+		sprintf_s(title, "LAPS: %d  %.2f ", laps_count, secondsPassed);
+		App->window->SetTitle(title);
+
+		if (laps_count == LAPS)
+		{
+			App->window->SetTitle("YOU WON!!!!!!!");
+			win_condition = true;
+
+		}
+	}
+	
+
+	if (secondsPassed < 0.0f && win_condition == false)
+	{
+		App->window->SetTitle("YOU LOOOSER!!!!!!!,     press ESC TO GET THE FK OUT");		
+	}
+
+	
+	
 
 
 	return UPDATE_CONTINUE;
@@ -273,7 +297,7 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 	{
 		if (is_allowed == true)
 		{
-			laps++;
+			laps_count++;
 			is_allowed = false;
 		}
 	}
