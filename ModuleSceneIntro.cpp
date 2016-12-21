@@ -44,6 +44,8 @@ bool ModuleSceneIntro::CleanUp()
 	LOG("Unloading Intro scene");
 	circuit.clear();
 	App->audio->CleanUp();
+	cubelist.clear();
+	cylinderlist.clear();
 
 	return true;
 }
@@ -57,6 +59,9 @@ update_status ModuleSceneIntro::Update(float dt)
 	p.Render();
 
 	createCircuit();
+	createTunnel();
+	createBridge();
+	createFlag();
 	
 
 	
