@@ -262,7 +262,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	
 	
 	
-	secondsPassed -= 0.01f;
+	secondsPassed -= 0.024f;
 
 	if(secondsPassed > 0.0f && win_condition == false)
 	{
@@ -272,9 +272,9 @@ update_status ModuleSceneIntro::Update(float dt)
 
 		if (laps_count == LAPS)
 		{
-			App->window->SetTitle("YOU WON!!!!!!!");
+			App->window->SetTitle("YOU WON!!!!!!!,     press ESC TO GET THE FK OUT");
 			win_condition = true;
-
+			
 		}
 	}
 	
@@ -284,6 +284,7 @@ update_status ModuleSceneIntro::Update(float dt)
 		App->window->SetTitle("YOU LOOOSER!!!!!!!,     press ESC TO GET THE FK OUT");		
 	}
 
+	
 	
 	
 
