@@ -4,7 +4,6 @@
 #include "Globals.h"
 #include "Primitive.h"
 #include "p2List.h"
-#include "ModuleAudio.h"
 #define MAX_SNAKE 2
 
 struct PhysBody3D;
@@ -31,15 +30,11 @@ public:
 	void OnCollision(PhysBody3D* body1, PhysBody3D* body2);
 
 	void CreateCube(float x_scale, float y_scale, float z_scale, vec3 axis, float degrees, vec3 pos, Color color, float mass);
+	void createcube(const float x, const float y, const float z, vec3 axis, float angle, vec3 pos, Color colorcube);
 	void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos, Color colorcylinder);
-	void createBridge();
-	void createFlag(); 
-	void createTunnel(); 
-	void createCircuit();
+
 public:
 	
-	uint fx = 0;
-
 	PhysBody3D* pb_lilCube;
 	Cube lilCube;
 	p2List<Object> circuit;

@@ -23,15 +23,10 @@ PhysVehicle3D::~PhysVehicle3D()
 // ----------------------------------------------------------------------------
 void PhysVehicle3D::Render()
 {
-	Cube wing;
-
 	Cylinder wheel;
-
-	wing.color=White;
 
 	wheel.color = Blue;
 	
-	wing.Render();
 
 	for(int i = 0; i < vehicle->getNumWheels(); ++i)
 	{

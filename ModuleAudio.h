@@ -1,7 +1,6 @@
 #ifndef __ModuleAudio_H__
 #define __ModuleAudio_H__
 
-#include "Globals.h"
 #include "Module.h"
 #include "SDL_mixer\include\SDL_mixer.h"
 
@@ -22,7 +21,7 @@ public:
 
 	// Load a WAV in memory
 	unsigned int LoadFx(const char* path);
-	bool UnLoadFx(unsigned int id);
+
 	// Play a previously loaded WAV
 	bool PlayFx(unsigned int fx, int repeat = 0);
 
