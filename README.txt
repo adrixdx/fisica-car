@@ -1,21 +1,26 @@
-This is a game created to physics class.
 
-The project is a recreation of physics of a vehicle, in this case a mower.
 
-#Controls:
+This is a Bullet 3D Game created to physics class.
+
+-Controls:
 	
-	##Move:
+	-Car:
 
-	UP arrow 	-> go front
-	DOWN arrow 	-> go back LEFT arrow 	 -> go left
+	UP arrow 	-> accelerate
+	DOWN arrow 	-> decelerate 
+	LEFT arrow 	 -> go left
 	RIGHT arrow 	 -> go right
- SPACE->Stop	
-	##Camera:
- 
-	move camera: W,S,A,D keys
-	rotation: with the right mouse botton pushed, moving the mouse
+	SPACE             -> brake	
+
+	-Tools:
+
+	'2'              -> restart position
+	ESCAPE		 -> exit the game
 	
 
-#This project is being developed by: 
+-This project is being developed by: 
+	
+	Adrián Higuero
+	Yabel Rodríguez
 	
 	
