@@ -138,22 +138,17 @@ update_status ModulePlayer::Update(float dt)
 			turn -= TURN_DEGREES*0.3;
 	}
 
-	if (App->input->GetKey(SDL_SCANCODE_T) == KEY_REPEAT)
-	{
-		acceleration = MAX_ACCELERATION * 10;
-	}
-
-
 	if(App->input->GetKey(SDL_SCANCODE_DOWN) == KEY_REPEAT)
 	{
+		if (vehicle->GetKmh() > -100)
 		acceleration = -MAX_ACCELERATION*2;
 	}
 
 
 	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_REPEAT)
 	{
-		brake = BRAKE_POWER;
-		vehicle->SetPos(0, 0, 30);
+		brake = BRAKE_POWER*100;
+		vehicle->SetPos(0, 0, 30); 
 		App->scene_intro->secondsLap = 0.00f;
 	}
 
