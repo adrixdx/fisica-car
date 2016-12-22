@@ -24,8 +24,8 @@ bool ModuleSceneIntro::Start()
 	App->camera->LookAt(vec3(0, 1, 0));
 	
 	Cube sensor_cube;
-	sensor_cube.size = { 10, 1, 1 };
-	sensor_cube.SetPos(0, 1.5, 0);
+	sensor_cube.size = { 8, 0.5, 10 };
+	sensor_cube.SetPos(0, 0.5, -12.5);
 
 	sensor_lap = App->physics->AddBody(sensor_cube, 0);
 	sensor_lap->SetAsSensor(true);
@@ -33,8 +33,8 @@ bool ModuleSceneIntro::Start()
 	sensor_lap->collision_listeners.add(this);
 
 	Cube sensor_cube2;
-	sensor_cube2.size = { 5, 1, 1 };
-	sensor_cube2.SetPos(-37, 1.5, 0);
+	sensor_cube2.size = { 10, 0.5, 10 };
+	sensor_cube2.SetPos(-5, 0.5, 90);
 
 	interruptor = App->physics->AddBody(sensor_cube2, 0);
 	interruptor->SetAsSensor(true);
@@ -45,7 +45,7 @@ bool ModuleSceneIntro::Start()
 
 	createCircuit();
 	createFlag();
-	//createTunnel();
+	createTunnel();
 	createBridge();
 
 	return ret;
@@ -84,11 +84,13 @@ update_status ModuleSceneIntro::Update(float dt)
 	
 	
 	secondsPassed -= 0.024f;
+	secondsLap += 0.024f;
 
 	if(secondsPassed > 0.0f && win_condition == false)
 	{
+
 		char title[80];
-		sprintf_s(title, "LAPS: %d  %.2f ", laps_count, secondsPassed);
+		sprintf_s(title, "LAPS: %d/%d   %.2f     BEST TIME: %.2f", laps_count, LAPS, secondsPassed, bestTime);
 		App->window->SetTitle(title);
 
 		if (laps_count == LAPS)
@@ -104,7 +106,7 @@ update_status ModuleSceneIntro::Update(float dt)
 	{
 		App->window->SetTitle("YOU LOOOSER!!!!!!!,     press ESC TO GET THE FK OUT");		
 	}
-
+	
 	
 	
 	
@@ -121,6 +123,13 @@ void ModuleSceneIntro::OnCollision(PhysBody3D* body1, PhysBody3D* body2)
 		{
 			laps_count++;
 			is_allowed = false;
+
+			if (secondsLap < bestTime || bestTime == 0.00f){
+
+				bestTime = secondsLap;
+			}
+			
+			secondsLap = 0;
 		}
 	}
 
@@ -183,23 +192,27 @@ void ModuleSceneIntro::createFlag() {
 
 void ModuleSceneIntro::createTunnel() {
 
-	CreateCube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 20), White, 0);//Tunnel
-	CreateCube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 20), White, 0);//Tunnel
-	CreateCube(10.0f, 1.0f, 50.0f, vec3(0, 0, 1), 0, vec3(0, 6, 44.5), White, 0);//Tunnel
-	CreateCube(10.0f, 0.25f, 50.0f, vec3(0, 0, 1), 0, vec3(0, 6.6, 44.5), Pink, 0);//Tunnel
-	CreateCube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 69), White, 0);//Tunnel
-	CreateCube(1.0f, 10.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 69), White, 0);//Tunnel
-	CreateCube(1.0f, 1.5f, 50.0f, vec3(0, 0, 1), 0, vec3(4.5, 1.5, 44.5), White, 0);//Tunnel
-	CreateCube(1.0f, 1.5f, 50.0f, vec3(0, 0, 1), 0, vec3(-4.5, 1.5, 44.5), White, 0);//Tunnel
-	CreateCube(1.0f, 1.5f, 50.0f, vec3(0, 0, 1), 0, vec3(4.5, 5, 44.5), White, 0);//Tunnel
-	CreateCube(1.0f, 1.5f, 50.0f, vec3(0, 0, 1), 0, vec3(-4.5, 5, 44.5), White, 0);//Tunnel
+	CreateCube(1.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 20), White, 0);//Tunnel
+	CreateCube(1.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 20), White, 0);//Tunnel
+	CreateCube(10.0f, 1.0f, 50.0f, vec3(0, 0, 1), 0, vec3(0, 3, 44.5), White, 0);//Tunnel
+	CreateCube(30.0f, 0.25f, 50.0f, vec3(0, 0, 1), 0, vec3(0, 3.6, 44.5), Pink, 0);//Tunnel
+	CreateCube(1.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 69), White, 0);//Tunnel
+	CreateCube(1.0f, 5.0f, 1.0f, vec3(0, 0, 1), 0, vec3(-4.5, 0.5, 69), White, 0);//Tunnel
+	//CreateCube(1.0f, 1.f, 50.0f, vec3(0, 0, 1), 0, vec3(4.5, 1.5, 44.5), White, 0);//Tunnel
+	//CreateCube(1.0f, 1.f, 50.0f, vec3(0, 0, 1), 0, vec3(-4.5, 1.5, 44.5), White, 0);//Tunnel
+	//CreateCube(1.0f, 1.f, 50.0f, vec3(0, 0, 1), 0, vec3(4.5, 3.5, 44.5), White, 0);//Tunnel
+	//CreateCube(1.0f, 1.f, 50.0f, vec3(0, 0, 1), 0, vec3(-4.5, 3.5, 44.5), White, 0);//Tunnel
 
 
 }
 
 void ModuleSceneIntro::createCircuit() {
-	CreateCube(8.0f, 0.2f, 5.0f, vec3(1, 0, 0), -30, vec3(0, 0, -5), Cian, 10000);
-	CreateCube(8.0f, 1.0f, 1.0f, vec3(1, 0, 0), 0, vec3(0, 0, -2.5), Cian, 10000);
+	CreateCube(8.0f, 0.1f, 5.0f, vec3(1, 0, 0), 0, vec3(0, 2, -7.5), Cian, 10000);
+	CreateCube(8.0f, 1.5f, 1.0f, vec3(1, 0, 0), 0, vec3(0, 0, -5), Cian, 10000);
+
+	CreateCube(8.0f, 0.1f, 1.0f, vec3(1, 0, 0), 0, vec3(0, 0, 20), Cian, 10000);
+	CreateCube(8.0f, 0.2f, 11.0f, vec3(1, 0, 0), 0, vec3(0, 1.5, 15), Cian, 10000);
+	CreateCube(8.0f, 0.5f, 1.0f, vec3(1, 0, 0), 0, vec3(0, 0, 10), Cian, 10000);
 	//CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(2.25, 0.5, -4), Pink, 100);//Puerta
 	//CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(-2.25, 0.5, -4), Pink, 100);//puerta
 	CreateCube(1.0f, 0.25f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 1, 35), Pink, 0);//Bordes

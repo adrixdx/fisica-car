@@ -21,16 +21,16 @@ bool ModulePlayer::Start()
 	VehicleInfo car;
 
 	// Car properties ----------------------------------------
-	car.chassis_size.Set(1, 1, 4);
+	car.chassis_size.Set(1, 1, 3);
 	car.chassis_offset.Set(0, 0.75, 0);
 	car.tunning_offset.Set(1.25, 0.95, 0);
 	car.tunning2_offset.Set(-1.25, 0.95, 0);
 	
 	car.mass = 1000.0f;
-	car.suspensionStiffness = 15.88f;
+	car.suspensionStiffness = 7.88f;
 	car.suspensionCompression = 0.83f;
 	car.suspensionDamping = 0.88f;
-	car.maxSuspensionTravelCm = 1000.0f;
+	car.maxSuspensionTravelCm = 500.0f;
 	car.frictionSlip = 50.5;
 	car.maxSuspensionForce = 6000.0f;
 
@@ -101,7 +101,7 @@ bool ModulePlayer::Start()
 	car.wheels[3].steering = false;
 
 	vehicle = App->physics->AddVehicle(car);
-	vehicle->SetPos(0, 0, 0);
+	vehicle->SetPos(0, 0, 35);
 	
 	return true;
 }
@@ -121,20 +121,21 @@ update_status ModulePlayer::Update(float dt)
 
 	if(App->input->GetKey(SDL_SCANCODE_UP) == KEY_REPEAT)
 	{
-		acceleration = MAX_ACCELERATION*2;
+		if (vehicle->GetKmh() < 100)
+			acceleration = MAX_ACCELERATION * 2;
 	}
 
 	if(App->input->GetKey(SDL_SCANCODE_LEFT) == KEY_REPEAT)
 	{
 		if(turn < TURN_DEGREES)
-			turn +=  TURN_DEGREES*0.5;
+			turn +=  TURN_DEGREES*0.3;
 	}
 
 
 	if(App->input->GetKey(SDL_SCANCODE_RIGHT) == KEY_REPEAT)
 	{
 		if(turn > -TURN_DEGREES)
-			turn -= TURN_DEGREES*0.5;
+			turn -= TURN_DEGREES*0.3;
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_T) == KEY_REPEAT)
@@ -151,7 +152,9 @@ update_status ModulePlayer::Update(float dt)
 
 	if (App->input->GetKey(SDL_SCANCODE_2) == KEY_REPEAT)
 	{
-		vehicle->SetPos(0, 5, -20);
+		brake = BRAKE_POWER;
+		vehicle->SetPos(0, 0, 30);
+		App->scene_intro->secondsLap = 0.00f;
 	}
 
 	if (App->input->GetKey(SDL_SCANCODE_SPACE) == KEY_REPEAT)

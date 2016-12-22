@@ -43,6 +43,8 @@ public:
 	int laps_count = 0;
 	bool is_allowed = false;
 	float secondsPassed = TIMER;
+	float bestTime = 0;
+	float secondsLap = 0;
 	bool win_condition = false;
 
 	PhysBody3D* sensor_lap;
