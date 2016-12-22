@@ -95,9 +95,8 @@ update_status ModuleSceneIntro::Update(float dt)
 		App->window->SetTitle(title);
 
 		if (laps_count == LAPS)
-		{
-			sprintf_s(title, "LAPS: %d/%d   %.2f     BEST TIME: %.2f           YOU WON!!!!!!!      (press ESC)", laps_count, LAPS, secondsPassed, bestTime);
-			App->window->SetTitle(title);
+		{	
+			App->window->SetTitle("              YOU WON!!!!!!!              (press ESC -> to EXIT)");
 			win_condition = true;
 			
 		}
@@ -106,9 +105,7 @@ update_status ModuleSceneIntro::Update(float dt)
 
 	if (secondsPassed < 0.0f && win_condition == false)
 	{
-		char title2[80];
-		sprintf_s(title2, "LAPS: %d/%d   %.2f     BEST TIME: %.2f           YOU LOOSE!!!!!!!      (press ESC)", laps_count, LAPS, secondsPassed, bestTime);
-		App->window->SetTitle(title2);
+		App->window->SetTitle("              YOU LOOSE!!!!!!!              (press ESC -> to EXIT)");
 	}
 	
 	
@@ -210,8 +207,9 @@ void ModuleSceneIntro::createTunnel() {
 }
 
 void ModuleSceneIntro::createCircuit() {
-	CreateCube(15.0f, 0.1f, 5.0f, vec3(1, 0, 0), 0, vec3(0, 2, -7.5), Cian, 90000);
-	CreateCube(15.0f, 1.5f, 1.0f, vec3(1, 0, 0), 0, vec3(0, 0, -5), Cian, 90000);
+	CreateCube(15.0f, 0.1f, 7.0f, vec3(1, 0, 0), -17, vec3(0, 0.5, -7), Cian, 0);
+	//CreateCube(15.0f, 1.5f, 2.0f, vec3(1, 0, 0), 0, vec3(0, 0, -6), Cian, 900000);
+	
 	
 	CreateCube(1.0f, 5.25f, 105.0f, vec3(0, 0, 1), 0, vec3(8.5, 1, 35), Pink, 0);//Bordes
 	CreateCube(1.0f, 5.25f, 95.0f, vec3(0, 0, 1), 0, vec3(-8.5, 1, 35), Pink, 0);//Bordes
