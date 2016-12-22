@@ -9,6 +9,7 @@
 struct PhysBody3D;
 struct PhysMotor3D;
 
+
 struct Object {
 
 	Cube cube;
@@ -16,6 +17,8 @@ struct Object {
 	PhysBody3D* pb_cube;
 
 };
+
+	
 
 class ModuleSceneIntro : public Module
 {
@@ -34,7 +37,14 @@ public:
 	void ModuleSceneIntro::createcylinder(const float radius, const float height, vec3 axis, float angle, vec3 pos, Color colorcylinder);
 
 public:
-	
+	int laps_count = 0;
+	bool is_allowed = false;
+	float secondsPassed = TIMER;
+	bool win_condition = false;
+
+	PhysBody3D* sensor_lap;
+	PhysBody3D* interruptor;
+
 	PhysBody3D* pb_lilCube;
 	Cube lilCube;
 	p2List<Object> circuit;

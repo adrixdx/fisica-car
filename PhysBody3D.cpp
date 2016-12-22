@@ -4,7 +4,9 @@
 
 // =================================================
 PhysBody3D::PhysBody3D(btRigidBody* body) : body(body)
-{}
+{
+	body->setUserPointer(this);
+}
 
 // ---------------------------------------------------------
 PhysBody3D::~PhysBody3D()
@@ -61,6 +63,17 @@ void PhysBody3D::SetPos(float x, float y, float z)
 	vehicle_position.z = z;
 }
 
+void PhysBody3D::SetAsSensor(bool is_sensor)
+{
+	if (this->sensor != is_sensor)
+	{
+		this->sensor = is_sensor;
+		if (is_sensor == true)
+			body->setCollisionFlags(body->getCollisionFlags() | btCollisionObject::CF_NO_CONTACT_RESPONSE);
+		else
+			body->setCollisionFlags(body->getCollisionFlags() &~btCollisionObject::CF_NO_CONTACT_RESPONSE);
+	}
+}
 const vec3 PhysBody3D::GetPos()const {
 	return vehicle_position;
 }

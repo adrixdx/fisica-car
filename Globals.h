@@ -37,3 +37,5 @@ enum update_status
 #define WIN_FULLSCREEN_DESKTOP false
 #define VSYNC true
 #define TITLE "3D Physics Playground"
+#define LAPS 3
+#define TIMER 90
