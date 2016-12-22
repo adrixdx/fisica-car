@@ -5,7 +5,7 @@
 #include "PhysBody3D.h"
 #include "Color.h"
 #include "ModulePlayer.h"
-#include <ctime>
+
 
 ModuleSceneIntro::ModuleSceneIntro(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
@@ -45,7 +45,7 @@ bool ModuleSceneIntro::Start()
 
 	createCircuit();
 	createFlag();
-	createTunnel();
+	//createTunnel();
 	createBridge();
 
 	return ret;
@@ -198,8 +198,10 @@ void ModuleSceneIntro::createTunnel() {
 }
 
 void ModuleSceneIntro::createCircuit() {
-	CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(2.25, 0.5, -4), Pink, 100);//Puerta
-	CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(-2.25, 0.5, -4), Pink, 100);//puerta
+	CreateCube(8.0f, 0.2f, 5.0f, vec3(1, 0, 0), -30, vec3(0, 0, -5), Cian, 10000);
+	CreateCube(8.0f, 1.0f, 1.0f, vec3(1, 0, 0), 0, vec3(0, 0, -2.5), Cian, 10000);
+	//CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(2.25, 0.5, -4), Pink, 100);//Puerta
+	//CreateCube(4.0f, 1.0f, 0.25f, vec3(0, 0, 1), 0, vec3(-2.25, 0.5, -4), Pink, 100);//puerta
 	CreateCube(1.0f, 0.25f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 1, 35), Pink, 0);//Bordes
 	CreateCube(1.0f, 0.25f, 95.0f, vec3(0, 0, 1), 0, vec3(-4.5, 1, 35), Pink, 0);//Bordes
 	CreateCube(1.0f, 1.0f, 105.0f, vec3(0, 0, 1), 0, vec3(4.5, 0.5, 35), White, 0);//Bordes
